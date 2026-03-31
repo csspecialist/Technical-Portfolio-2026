@@ -19,8 +19,8 @@ tags:
 
 ## 1. Objective
 
-Define a standardized, secure, and auditable procedure 
-for configuring and validating VPN access protected 
+Define a standardized, secure, and auditable procedure
+for configuring and validating VPN access protected
 by Multi-Factor Authentication (MFA) for L3 support engineers.
 
 ---

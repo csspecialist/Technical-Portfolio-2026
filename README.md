@@ -1,3 +1,4 @@
 # Technical-Portfolio-2026
 
-Bilingual Technical Documentation &amp; AI-Augmented Workflows.
+Bilingual Technical Documentation & AI-Augmented Workflows.
+
