@@ -1,5 +1,5 @@
 ---
-title: "PNN – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
+title: "PNN (SOP) – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-03-31"
