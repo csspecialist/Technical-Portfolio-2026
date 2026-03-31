@@ -3,7 +3,7 @@ title: "SOP – Secure VPN with MFA Configuration for L3 Support Engineers"
 version: "1.0.0"
 status: "Approved"
 date: "2026-03-30"
-author: "Maliki K."
+author: "Maliki Kamara"
 standard_alignment:
   - ISO/IEC 27001:2022
 tags:
