@@ -71,10 +71,11 @@ Le processus d'authentification VPN suit les étapes suivantes :
 1. L'ingénieur initialise une connexion VPN à l'aide du client approuvé.
 2. Le client VPN envoie une demande d'accès à la passerelle VPN.
 3. La passerelle VPN transmet l'authentification au fournisseur d'identité (IdP).
-4. L'IdP valide les identifiants et déclenche un défi AMF.
+4. L'IdP valide les identifiants et déclenche un défi AMF
+   pour l'utilisateur.
 5. L'ingénieur relève le défi AMF.
-6. Une fois l'authentification réussie, un tunnel VPN
-   sécurisé est établi.
+6. Une fois l'authentification réussie, un tunnel VPN sécurisé
+   est établi.
 
 ---
 
