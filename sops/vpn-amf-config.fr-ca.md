@@ -56,8 +56,10 @@ Cette procédure exclut :
 
 | Rôle | Responsabilité |
 |------|----------------|
-| Ingénieur de soutien L3 | Exécuter la procédure, maintenir l'AMF, signaler les incidents. |
-| Équipe de cybersécurité | Configurer le VPN, appliquer l'AMF, surveiller les journaux. |
+| Ingénieur de soutien L3 | Exécuter la procédure, maintenir l'AMF,
+signaler les incidents. |
+| Équipe de cybersécurité | Configurer le VPN, appliquer l'AMF,
+surveiller les journaux. |
 | Équipe GIA | Gérer les identités et l'enrôlement à l'AMF. |
 | Gestion des terminaux | Assurer la conformité des appareils. |
 | Centre de services | Fournir un soutien de niveau 1 et 2. |
