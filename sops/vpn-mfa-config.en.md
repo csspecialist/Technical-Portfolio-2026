@@ -13,7 +13,7 @@ tags:
   - access-control
 ---
 
-# SOP – Secure VPN with MFA Configuration for L3 Support Engineers
+## SOP – Secure VPN with MFA Configuration for L3 Support Engineers
 
 ---
 
