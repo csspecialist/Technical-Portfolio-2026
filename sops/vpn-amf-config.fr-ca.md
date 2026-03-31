@@ -73,7 +73,8 @@ Le processus d'authentification VPN suit les étapes suivantes :
 3. La passerelle VPN transmet l'authentification au fournisseur d'identité (IdP).
 4. L'IdP valide les identifiants et déclenche un défi AMF.
 5. L'ingénieur relève le défi AMF.
-6. Une fois l'authentification réussie, un tunnel VPN sécurisé est établi.
+6. Une fois l'authentification réussie, un tunnel VPN
+   sécurisé est établi.
 
 ---
 
@@ -280,4 +281,6 @@ Les exceptions doivent :
 
 ---
 
-> **Note de conformité (Loi 96) :** Ce document a été rédigé en français pour assurer la conformité aux exigences linguistiques du Québec concernant les outils de travail et la documentation technique interne.
+> **Note de conformité (Loi 96) :** Ce document a été rédigé en français
+> pour assurer la conformité aux exigences linguistiques du Québec concernant
+> les outils de travail et la documentation technique interne.
