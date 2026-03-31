@@ -17,13 +17,15 @@ tags:
 
 ---
 
-# 1. Objective
+## 1. Objective
 
-Define a standardized, secure, and auditable procedure for configuring and validating VPN access protected by Multi-Factor Authentication (MFA) for L3 support engineers.
+Define a standardized, secure, and auditable procedure 
+for configuring and validating VPN access protected 
+by Multi-Factor Authentication (MFA) for L3 support engineers.
 
 ---
 
-# 2. Scope
+## 2. Scope
 
 This SOP applies to:
 
@@ -39,7 +41,7 @@ This SOP excludes:
 
 ---
 
-# 3. Definitions
+## 3. Definitions
 
 - **VPN**: Virtual Private Network enabling secure remote access
 - **MFA**: Multi-Factor Authentication requiring two or more verification factors
@@ -49,7 +51,7 @@ This SOP excludes:
 
 ---
 
-# 4. Roles and Responsibilities
+## 4. Roles and Responsibilities
 
 | Role | Responsibility |
 |------|----------------|
@@ -74,7 +76,7 @@ The VPN authentication process follows these steps:
 
 ---
 
-# 6. Compliance Alignment (ISO/IEC 27001:2022)
+## 6. Compliance Alignment (ISO/IEC 27001:2022)
 
 | Control | Description |
 |--------|-------------|
@@ -86,7 +88,7 @@ The VPN authentication process follows these steps:
 
 ---
 
-# 7. Prerequisites
+## 7. Prerequisites
 
 Before starting, ensure:
 
@@ -99,25 +101,29 @@ Before starting, ensure:
 
 ---
 
-# 8. Procedure
+## 8. Procedure
 
 ## 8.1 Configure VPN Client
 
 ### Step 1 – Launch Client
+
 Open the approved VPN client on the managed device.
 
 ### Step 2 – Create VPN Profile
+
 - Enter VPN gateway URL
 - Select protocol:
   - SSL VPN (default)
   - IPSec (only if required)
 
 ### Step 3 – Configure Authentication
+
 - Set authentication method to SAML or RADIUS with MFA
 - Enable username and password authentication
 - Select certificate if required
 
 ### Step 4 – Apply Security Settings
+
 - Enable Always-On VPN (if required)
 - Disable split tunneling unless explicitly approved
 - Enable DNS leak protection
@@ -129,11 +135,13 @@ Open the approved VPN client on the managed device.
 ## 8.2 Configure MFA
 
 ### Step 5 – Enroll MFA
+
 - Register at least two factors:
   - Authenticator app (primary)
   - Backup method (hardware token or recovery code)
 
 ### Step 6 – Validate MFA
+
 - Perform test authentication
 - Confirm MFA challenge is triggered
 - Confirm successful authentication
@@ -143,10 +151,12 @@ Open the approved VPN client on the managed device.
 ## 8.3 Establish VPN Connection
 
 ### Step 7 – Initiate Connection
+
 - Select VPN profile
 - Enter credentials
 
 ### Step 8 – Complete MFA
+
 - Approve MFA request
 - Wait for connection confirmation
 
@@ -155,18 +165,20 @@ Open the approved VPN client on the managed device.
 ## 8.4 Post-Connection Validation
 
 ### Step 9 – Validate Network Access
+
 - Resolve internal DNS
 - Access internal systems
 - Confirm VPN IP assignment
 
 ### Step 10 – Validate Security Status
+
 - Confirm endpoint compliance
 - Verify split tunneling is disabled
 - Confirm logs appear in SIEM
 
 ---
 
-# 9. Verification Criteria
+## 9. Verification Criteria
 
 ## Functional
 
@@ -187,7 +199,7 @@ Open the approved VPN client on the managed device.
 
 ---
 
-# 10. Failure Handling
+## 10. Failure Handling
 
 | Issue | Action |
 |------|--------|
@@ -197,7 +209,7 @@ Open the approved VPN client on the managed device.
 
 ---
 
-# 11. Rollback Procedure
+## 11. Rollback Procedure
 
 1. Disconnect VPN
 2. Restore previous VPN configuration
@@ -207,7 +219,7 @@ Open the approved VPN client on the managed device.
 
 ---
 
-# 12. Security Risks
+## 12. Security Risks
 
 - Unauthorized access without MFA
 - Misconfigured VPN exposing internal traffic
@@ -215,7 +227,7 @@ Open the approved VPN client on the managed device.
 
 ---
 
-# 13. Exceptions
+## 13. Exceptions
 
 Exceptions must:
 
@@ -226,7 +238,7 @@ Exceptions must:
 
 ---
 
-# 14. Records and Evidence
+## 14. Records and Evidence
 
 | Record | Retention |
 |--------|----------|
@@ -237,7 +249,7 @@ Exceptions must:
 
 ---
 
-# 15. Change Management
+## 15. Change Management
 
 - Submit formal change request
 - Obtain approval from IT Security and IAM
@@ -246,7 +258,7 @@ Exceptions must:
 
 ---
 
-# 16. Revision History
+## 16. Revision History
 
 | Version | Date | Author | Changes |
 |--------|------|--------|--------|
@@ -254,9 +266,10 @@ Exceptions must:
 
 ---
 
-# 17. Appendices
+## 17. Appendices
 
 ## Appendix A – Approved VPN Clients
+
 - Cisco AnyConnect
 - Palo Alto GlobalProtect
 - Fortinet FortiClient
@@ -264,6 +277,7 @@ Exceptions must:
 - WireGuard (if approved)
 
 ## Appendix B – Approved MFA Methods
+
 - Authenticator app (TOTP or push)
 - FIDO2 hardware token
 - Smartcard / PIV
