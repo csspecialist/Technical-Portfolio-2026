@@ -250,7 +250,7 @@ Exceptions must:
 
 | Version | Date | Author | Changes |
 |--------|------|--------|--------|
-| 1.0.0 | 2026-03-30 | [Your Name] | Initial version |
+| 1.0.0 | 2026-03-30 | Maliki Kamara | Initial version |
 
 ---
 
