@@ -27,25 +27,25 @@ Define a standardized, secure, and auditable procedure for configuring and valid
 
 This SOP applies to:
 
-- L3 support engineers requiring privileged remote access  
-- Corporate-managed endpoints (Windows, macOS, Linux)  
-- Approved VPN gateways and identity providers (IdPs)  
+- L3 support engineers requiring privileged remote access
+- Corporate-managed endpoints (Windows, macOS, Linux)
+- Approved VPN gateways and identity providers (IdPs)
 
 This SOP excludes:
 
-- Non-privileged users  
-- Unmanaged or personal devices (BYOD)  
-- Users without approved access rights  
+- Non-privileged users
+- Unmanaged or personal devices (BYOD)
+- Users without approved access rights
 
 ---
 
 # 3. Definitions
 
-- **VPN**: Virtual Private Network enabling secure remote access  
-- **MFA**: Multi-Factor Authentication requiring two or more verification factors  
-- **IdP**: Identity Provider responsible for authentication  
-- **SIEM**: Security Information and Event Management system  
-- **ISMS**: Information Security Management System  
+- **VPN**: Virtual Private Network enabling secure remote access
+- **MFA**: Multi-Factor Authentication requiring two or more verification factors
+- **IdP**: Identity Provider responsible for authentication
+- **SIEM**: Security Information and Event Management system
+- **ISMS**: Information Security Management System
 
 ---
 
@@ -275,4 +275,4 @@ Exceptions must:
 |------|-----------|
 | No MFA prompt | Check device or re-enroll |
 | VPN failure | Validate certificates and DNS |
-| Split tunneling active | Reapply policy |    
+| Split tunneling active | Reapply policy |
