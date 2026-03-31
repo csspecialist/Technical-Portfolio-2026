@@ -20,4 +20,3 @@ This repository contains high-availability documentation.
 - **Markdown**: Docs-as-Code approach.
 - **GitHub Actions**: Automated linting for accessibility.
 - **Standards**: ISO/IEC 27001:2022 & OQLF Compliance.
-
