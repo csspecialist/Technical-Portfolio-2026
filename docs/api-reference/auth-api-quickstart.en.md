@@ -23,7 +23,7 @@ Authorization: Bearer <YOUR_TOKEN>
 
 Enrolls a user in TOTP-based multi-factor authentication.
 
-**Request**
+#### Request
 ```http
 POST /v1/mfa/enroll HTTP/1.1
 Host: api.secureauth.io
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-**Response — 200 OK**
+#### Response — 200 OK
 ```json
 {
   "enrollment_id": "enr_09ABCD",
@@ -45,7 +45,7 @@ Content-Type: application/json
 }
 ```
 
-**Response Fields**
+#### Response Fields
 
 | Field           | Type   | Description                           |
 |-----------------|--------|---------------------------------------|
@@ -59,7 +59,7 @@ Content-Type: application/json
 
 Verifies a TOTP code submitted by the user.
 
-**Request**
+#### Request
 ```http
 POST /v1/mfa/verify HTTP/1.1
 Host: api.secureauth.io
@@ -72,7 +72,7 @@ Content-Type: application/json
 }
 ```
 
-**Response — 200 OK**
+#### Response — 200 OK
 ```json
 {
   "verified": true,
@@ -80,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-**Response — 401 Unauthorized**
+#### Response — 401 Unauthorized
 ```json
 {
   "verified": false,
@@ -88,31 +88,30 @@ Content-Type: application/json
 }
 ```
 
-**Response Fields**
+#### Response Fields
 
-| Field           | Type    | Description                            |
-|-----------------|---------|----------------------------------------|
-| `enrollment_id` | string  | Enrollment ID returned at enroll step  |
-| `totp_code`     | string  | 6-digit code from your authenticator   |
-| `verified`      | boolean | `true` if verification succeeded       |
-| `session_token` | string  | Session token issued on success        |
+| Field           | Type    | Description                           |
+|-----------------|---------|---------------------------------------|
+| `enrollment_id` | string  | Enrollment ID returned at enroll step |
+| `totp_code`     | string  | 6-digit code from your authenticator  |
+| `verified`      | boolean | `true` if verification succeeded      |
+| `session_token` | string  | Session token issued on success       |
 
 ---
 
 ## Error Codes
 
-| Code                    | Status | Description                          |
-|-------------------------|--------|--------------------------------------|
-| `invalid_token`         | 401    | Bearer Token is missing or invalid   |
-| `user_not_found`        | 404    | The specified `user_id` does not     |
-|                         |        | exist                                |
-| `invalid_totp_code`     | 401    | TOTP code is incorrect or expired    |
-| `enrollment_not_found`  | 404    | No enrollment matches that ID        |
+| Code                   | Status | Description                        |
+|------------------------|--------|------------------------------------|
+| `invalid_token`        | 401    | Bearer Token is missing or invalid |
+| `user_not_found`       | 404    | The specified `user_id` not found  |
+| `invalid_totp_code`    | 401    | TOTP code is incorrect or expired  |
+| `enrollment_not_found` | 404    | No enrollment matches that ID      |
 
 ---
 
 ## Next Steps
 
-- Review rate limits in the full [API Reference](#).
+- Review rate limits in the full [API Reference](../api-reference.md).
 - Enable backup codes via `POST /v1/mfa/backup`.
 - Contact support at support@secureauth.io.
