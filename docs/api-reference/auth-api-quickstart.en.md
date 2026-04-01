@@ -13,6 +13,7 @@ Get up and running with MFA enrollment and verification in minutes.
 
 All requests require an `Authorization` header containing your Bearer
 Token.
+
 ```http
 Authorization: Bearer <YOUR_TOKEN>
 ```
@@ -23,7 +24,7 @@ Authorization: Bearer <YOUR_TOKEN>
 
 Enrolls a user in TOTP-based multi-factor authentication.
 
-#### Request
+#### Enrollment Request
 
 ```http
 POST /v1/mfa/enroll HTTP/1.1
@@ -37,7 +38,7 @@ Content-Type: application/json
 }
 ```
 
-#### Response — 200 OK
+#### Enrollment Response — 200 OK
 
 ```json
 {
@@ -47,7 +48,7 @@ Content-Type: application/json
 }
 ```
 
-#### Response Fields
+#### Enrollment Response Fields
 
 | Field           | Type   | Description                           |
 |-----------------|--------|---------------------------------------|
@@ -61,7 +62,7 @@ Content-Type: application/json
 
 Verifies a TOTP code submitted by the user.
 
-#### Request
+#### Verification Request
 
 ```http
 POST /v1/mfa/verify HTTP/1.1
@@ -75,7 +76,7 @@ Content-Type: application/json
 }
 ```
 
-#### Response — 200 OK
+#### Verification Response — 200 OK
 
 ```json
 {
@@ -93,7 +94,7 @@ Content-Type: application/json
 }
 ```
 
-#### Response Fields
+#### Verification Response Fields
 
 | Field           | Type    | Description                           |
 |-----------------|---------|---------------------------------------|

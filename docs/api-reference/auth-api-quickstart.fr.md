@@ -14,6 +14,7 @@ Configurez l'enrôlement et la vérification AMF en quelques minutes.
 
 Chaque requête doit inclure un en-tête `Authorization` contenant votre
 jeton d'accès.
+
 ```http
 Authorization: Bearer <VOTRE_JETON>
 ```
@@ -24,7 +25,8 @@ Authorization: Bearer <VOTRE_JETON>
 
 Enrôle un utilisateur dans l'authentification multifacteur (AMF) TOTP.
 
-#### Requête
+#### Requête d'enrôlement
+
 ```http
 POST /v1/mfa/enroll HTTP/1.1
 Host: api.secureauth.io
@@ -37,7 +39,7 @@ Content-Type: application/json
 }
 ```
 
-#### Réponse — 200 OK
+#### Réponse d'enrôlement — 200 OK
 
 ```json
 {
@@ -47,7 +49,7 @@ Content-Type: application/json
 }
 ```
 
-#### Champs de la réponse
+#### Champs de la réponse d'enrôlement
 
 | Champ           | Type   | Description                              |
 |-----------------|--------|------------------------------------------|
@@ -61,7 +63,7 @@ Content-Type: application/json
 
 Vérifie un code TOTP soumis par l'utilisateur.
 
-#### Requête
+#### Requête de vérification
 
 ```http
 POST /v1/mfa/verify HTTP/1.1
@@ -75,7 +77,7 @@ Content-Type: application/json
 }
 ```
 
-#### Réponse — 200 OK
+#### Réponse de vérification — 200 OK
 
 ```json
 {
@@ -84,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-#### Réponse — 401 Non autorisé
+#### Réponse de vérification — 401 Non autorisé
 
 ```json
 {
@@ -93,7 +95,7 @@ Content-Type: application/json
 }
 ```
 
-#### Champs de la réponse
+#### Champs de la réponse de vérification
 
 | Champ           | Type    | Description                             |
 |-----------------|---------|-----------------------------------------|
