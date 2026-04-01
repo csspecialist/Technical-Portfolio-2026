@@ -38,6 +38,7 @@ Content-Type: application/json
 ```
 
 #### Réponse — 200 OK
+
 ```json
 {
   "enrollment_id": "enr_09ABCD",
@@ -61,6 +62,7 @@ Content-Type: application/json
 Vérifie un code TOTP soumis par l'utilisateur.
 
 #### Requête
+
 ```http
 POST /v1/mfa/verify HTTP/1.1
 Host: api.secureauth.io
@@ -74,6 +76,7 @@ Content-Type: application/json
 ```
 
 #### Réponse — 200 OK
+
 ```json
 {
   "verified": true,
@@ -82,6 +85,7 @@ Content-Type: application/json
 ```
 
 #### Réponse — 401 Non autorisé
+
 ```json
 {
   "verified": false,

@@ -24,6 +24,7 @@ Authorization: Bearer <YOUR_TOKEN>
 Enrolls a user in TOTP-based multi-factor authentication.
 
 #### Request
+
 ```http
 POST /v1/mfa/enroll HTTP/1.1
 Host: api.secureauth.io
@@ -37,6 +38,7 @@ Content-Type: application/json
 ```
 
 #### Response — 200 OK
+
 ```json
 {
   "enrollment_id": "enr_09ABCD",
@@ -60,6 +62,7 @@ Content-Type: application/json
 Verifies a TOTP code submitted by the user.
 
 #### Request
+
 ```http
 POST /v1/mfa/verify HTTP/1.1
 Host: api.secureauth.io
@@ -73,6 +76,7 @@ Content-Type: application/json
 ```
 
 #### Response — 200 OK
+
 ```json
 {
   "verified": true,
@@ -81,6 +85,7 @@ Content-Type: application/json
 ```
 
 #### Response — 401 Unauthorized
+
 ```json
 {
   "verified": false,
