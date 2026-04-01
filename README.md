@@ -21,3 +21,10 @@ This repository contains high-availability documentation.
 - **Markdown**: Docs-as-Code approach.
 - **GitHub Actions**: Automated linting for accessibility.
 - **Standards**: ISO 27001, OQLF (Loi 96) & RGPD (ANSSI).
+
+## ⌨️ Developer Resources (API)
+
+| Document | Language | Type |
+| :--- | :--- | :--- |
+| [API Quickstart (EN)](./docs/api-reference/auth-api-quickstart.en.md) | 🇺🇸 EN | REST API |
+| [Guide API (FR)](./docs/api-reference/auth-api-quickstart.fr.md) | 🇫🇷 FR | REST API |
