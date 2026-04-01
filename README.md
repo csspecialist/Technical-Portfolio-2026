@@ -11,7 +11,8 @@ This repository contains high-availability documentation.
 | Document Title | Language | Compliance |
 | :--- | :--- | :--- |
 | [VPN + MFA Setup](./sops/vpn-mfa-config.en.md) | 🇺🇸 EN | ISO 27001 |
-| [VPN + AMF (PNN)](./sops/vpn-amf-config.fr-ca.md) | 🇨🇦 FR | Loi 96 |
+| [VPN + AMF (PNN)](./sops/vpn-amf-config.fr-ca.md) | 🇨🇦 FR-CA | Loi 96 |
+| [VPN + MFA (SOP)](./sops/vpn-mfa-config.fr-fr.md) | 🇫🇷 FR-FR | RGPD |
 
 ---
 
