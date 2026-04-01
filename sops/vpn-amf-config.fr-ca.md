@@ -1,5 +1,5 @@
 ---
-title: "PNN (SOP) – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
+title: "PON (SOP) – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-03-31"
@@ -14,7 +14,7 @@ tags:
   - contrôle-d-accès
 ---
 
-## PNN – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3
+## PON – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3
 
 ---
 
@@ -31,7 +31,7 @@ pour les ingénieurs de soutien technique de niveau 3 (L3).
 Cette procédure s'applique aux :
 
 - Ingénieurs de soutien L3 nécessitant un accès à distance privilégié.
-- Points de terminaison gérés par l'entreprise (Windows, macOS, Linux).
+- Terminaux (endpoints) gérés par l'entreprise (Windows, macOS, Linux).
 - Passerelles VPN et fournisseurs d'identité (IdP) approuvés.
 
 Cette procédure exclut :
@@ -128,7 +128,7 @@ Ouvrez le client VPN approuvé sur l'appareil géré.
 #### Étape 4 – Appliquer les paramètres de sécurité
 
 - Activez le VPN toujours actif (*Always-On*) si requis.
-- Désactivez le tunnelage fractionné (*split tunneling*) sauf approbation explicite.
+- Désactivez la tunnellisation fractionnée (*split tunneling*) sauf approbation explicite.
 - Activez la protection contre les fuites DNS.
 - Appliquez TLS 1.2 ou une version ultérieure.
 - Utilisez les serveurs DNS de l'entreprise.
@@ -249,9 +249,12 @@ Les exceptions doivent :
 ## 15. Gestion du changement
 
 - Soumettre une demande de changement formelle.
-- Obtenir l'approbation de la cybersécurité et de la GIA.
-- Mettre à jour la version de la PNN et l'historique des révisions.
-- Communiquer les changements aux parties prenantes.
+- Obtenir l’approbation de l’équipe de cybersécurité et de
+  l’équipe de gestion des identités et des accès.
+- Mettre à jour la version du document et l’historique des
+  révisions.
+- Communiquer les changements aux parties prenantes concernées
+  par les canaux approuvés.
 
 ---
 
