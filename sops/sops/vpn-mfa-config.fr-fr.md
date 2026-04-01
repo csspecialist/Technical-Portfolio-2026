@@ -59,17 +59,21 @@ Cette procédure s'applique aux :
 ## 5. Procédure technique
 
 ### Étape 1 – Lancement du client
+
 Ouvrez le client VPN approuvé sur votre poste de travail géré.
 
 ### Étape 2 – Création du profil
+
 - Saisissez l'URL de la passerelle.
 - Protocole : **SSL VPN** (par défaut).
 
 ### Étape 3 – Configuration MFA
+
 - Mode d'authentification : **SAML** ou **RADIUS** avec MFA.
 - Activez l'usage des identifiants (nom d'utilisateur/mot de passe).
 
 ### Étape 4 – Sécurisation du flux
+
 - Activez le **VPN permanent** (*Always-On*) si requis.
 - Désactivez le tunnelage fractionné (*split tunneling*).
 - Activez la protection contre les fuites DNS.
@@ -84,6 +88,6 @@ Ouvrez le client VPN approuvé sur votre poste de travail géré.
 
 ---
 
-> **Note de conformité (Europe) :** Ce document respecte les exigences du 
-> RGPD concernant la sécurisation des accès et les recommandations de 
+> **Note de conformité (Europe) :** Ce document respecte les exigences du
+> RGPD concernant la sécurisation des accès et les recommandations de
 > l'ANSSI pour la protection des systèmes d'information.
