@@ -28,3 +28,10 @@ This repository contains high-availability documentation.
 | :--- | :--- | :--- |
 | [API Quickstart (EN)](./docs/api-reference/auth-api-quickstart.en.md) | 🇺🇸 EN | REST API |
 | [Guide API (FR)](./docs/api-reference/auth-api-quickstart.fr.md) | 🇫🇷 FR | REST API |
+
+## ⚖️ Governance & Compliance
+
+| Document | Language | Standards |
+| :--- | :--- | :--- |
+| [Data Privacy Policy (EN)](./docs/compliance/data-privacy.en.md) | 🇺🇸 EN | ISO 27001, GDPR |
+| [Politique de Confidentialité (FR)](./docs/compliance/data-privacy.fr.md) | 🇫🇷 FR | ISO 27001, RGPD |
