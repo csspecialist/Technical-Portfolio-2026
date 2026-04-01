@@ -1,8 +1,8 @@
 ---
-title: "Mode opératoire (SOP) – Configuration du VPN avec MFA"
+title: "Mode opératoire (SOP) – Configuration du VPN avec MFA (Support L3)"
 version: "1.0.0"
 status: "Approuvé"
-date: "2026-03-31"
+date: "2026-04-01"
 author: "Maliki Kamara"
 standard_alignment:
   - ISO/IEC 27001:2022
