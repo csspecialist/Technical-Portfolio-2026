@@ -14,7 +14,7 @@ following a "Docs-as-Code" methodology.
 | :--- | :--- | :--- | :--- |
 | **VPN + MFA (L3 Support)** | 🇺🇸 EN | ISO 27001 | [View Source](./portal/src/content/docs/en/sops/vpn-mfa-config.md) |
 | **VPN + AMF (Soutien L3)** | 🇨🇦 FR-CA | Loi 96 | [View Source](./portal/src/content/docs/fr-ca/sops/vpn-mfa-config.md) |
-| **VPN + MFA (Support L3)** | 🇫🇷 FR | RGPD | [View Source](./portal/src/content/docs/fr/sops/vpn-mfa-config.md) |
+| **VPN + MFA (Support L3)** | 🇫🇷 FR | RGPD | [View Source](portal/src/content/docs/fr/sops/vpn-mfa-config..md) |
 
 ---
 
