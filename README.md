@@ -1,37 +1,40 @@
 # Technical-Portfolio-2026
 
-Bilingual Technical Documentation & AI-Augmented Workflows.
+Bilingual Technical Documentation & AI-Augmented Workflows
+built with **Astro + Starlight**.
 
 ---
 
 ## 📁 Standard Operating Procedures (SOPs)
 
-This repository contains high-availability documentation.
+This repository contains high-availability documentation
+following a "Docs-as-Code" methodology.
 
-| Document Title | Language | Compliance |
-| :--- | :--- | :--- |
-| [VPN + MFA (L3 Support)](./sops/vpn-mfa-config.en.md) | 🇺🇸 EN | ISO 27001 |
-| [VPN + AMF (Soutien L3)](./sops/vpn-amf-config.fr-ca.md) | 🇨🇦 FR-CA | Loi 96 |
-| [VPN + MFA (Support L3)](./sops/vpn-mfa-config.fr-fr.md) | 🇫🇷 FR-FR | RGPD |
+| Document Title | Language | Compliance | Repo Link |
+| :--- | :--- | :--- | :--- |
+| **VPN + MFA (L3 Support)** | 🇺🇸 EN | ISO 27001 | [View Source](./src/content/docs/en/sops/vpn-mfa-config.md) |
+| **VPN + AMF (Soutien L3)** | 🇨🇦 FR-CA | Loi 96 | [View Source](./src/content/docs/fr-ca/sops/vpn-mfa-config.md) |
+| **VPN + MFA (Support L3)** | 🇫🇷 FR | RGPD | [View Source](./src/content/docs/fr/sops/vpn-mfa-config.md) |
 
 ---
 
 ## 🛠️ Tech Stack & Validation
 
-- **Markdown**: Docs-as-Code approach.
-- **GitHub Actions**: Automated linting for accessibility.
+- **Framework**: [Astro Starlight](https://starlight.astro.build/) (Documentation Engine).
+- **Architecture**: Internationalization (i18n) with strict locale routing (`en`, `fr`, `fr-ca`).
+- **Markdown**: Advanced frontmatter for automated sidebar generation.
 - **Standards**: ISO 27001, OQLF (Loi 96) & RGPD (ANSSI).
 
-## ⌨️ Developer Resources (API)
+## ⌨️ Developer Resources (Guides)
 
-| Document | Language | Type |
-| :--- | :--- | :--- |
-| [API Quickstart (EN)](./docs/api-reference/auth-api-quickstart.en.md) | 🇺🇸 EN | REST API |
-| [Guide API (FR)](./docs/api-reference/auth-api-quickstart.fr.md) | 🇫🇷 FR | REST API |
+| Document | Language | Type | Repo Link |
+| :--- | :--- | :--- | :--- |
+| **API Quickstart** | 🇺🇸 EN | REST API | [View Source](./src/content/docs/en/guides/auth-api-quickstart.md) |
+| **Guide API** | 🇫🇷 FR | REST API | [View Source](./src/content/docs/fr/guides/auth-api-quickstart.md) |
 
 ## ⚖️ Governance & Compliance
 
-| Document | Language | Standards |
-| :--- | :--- | :--- |
-| [Data Privacy Policy (EN)](./docs/compliance/data-privacy.en.md) | 🇺🇸 EN | ISO 27001, GDPR |
-| [Politique de Confidentialité (FR)](./docs/compliance/data-privacy.fr.md) | 🇫🇷 FR | ISO 27001, RGPD |
+| Document | Language | Standards | Repo Link |
+| :--- | :--- | :--- | :--- |
+| **Data Privacy Policy** | 🇺🇸 EN | ISO 27001, GDPR | [View Source](./src/content/docs/en/compliance/data-privacy.md) |
+| **Politique de Confidentialité** | 🇫🇷 FR | ISO 27001, RGPD | [View Source](./src/content/docs/fr/compliance/data-privacy.md) |
