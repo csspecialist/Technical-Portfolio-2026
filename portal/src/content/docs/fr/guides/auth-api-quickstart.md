@@ -1,3 +1,8 @@
+---
+title: Guide de démarrage rapide SecureAuth
+description: Apprenez à configurer l'authentification multifacteur en quelques minutes.
+---
+
 # SecureAuth — Guide de démarrage rapide
 
 Configurez l'enrôlement et la vérification AMF en quelques minutes.

@@ -1,5 +1,7 @@
 ---
 title: "PON (SOP) – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
+description: "Procédure d'exploitation normalisée pour la configuration du VPN avec authentification multifacteur."
+lang: fr-ca
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-03-31"

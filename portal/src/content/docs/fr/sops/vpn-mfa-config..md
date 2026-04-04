@@ -1,5 +1,6 @@
 ---
 title: "Mode opératoire (SOP) – Configuration du VPN avec MFA (Support L3)"
+description: "Procédure d'exploitation normalisée pour la configuration sécurisée du VPN et de l'authentification multifacteur pour l'équipe de support L3."
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-04-01"

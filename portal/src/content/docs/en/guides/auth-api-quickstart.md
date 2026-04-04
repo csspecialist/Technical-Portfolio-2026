@@ -1,3 +1,8 @@
+---
+title: Auth API Quickstart
+description: A guide to getting started with our Authentication API.
+---
+
 # SecureAuth — Quickstart Guide
 
 Get up and running with MFA enrollment and verification in minutes.

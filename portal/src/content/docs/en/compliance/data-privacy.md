@@ -1,3 +1,16 @@
+---
+title: SecureAuth Data Privacy Policy
+description: Compliance and data handling policies aligned with ISO 27001 and GDPR standards.
+version: "1.0.0"
+status: "Approved"
+date: "2026-04-01"
+author: "Maliki Kamara"
+standard_alignment:
+  - ISO/IEC 27001:2022
+  - GDPR
+  - Bill 25 (Quebec)
+---
+
 # SecureAuth Data Privacy Policy
 
 ## Introduction

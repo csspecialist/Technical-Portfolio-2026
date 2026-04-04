@@ -1,5 +1,6 @@
 ---
 title: "SOP – Secure VPN with MFA Configuration for L3 Support Engineers"
+description: "Standard Operating Procedure for L3 Support Engineers to configure secure VPN access with Multi-Factor Authentication."
 version: "1.0.0"
 status: "Approved"
 date: "2026-03-30"
