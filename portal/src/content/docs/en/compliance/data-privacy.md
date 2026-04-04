@@ -11,7 +11,7 @@ standard_alignment:
   - Bill 25 (Quebec)
 ---
 
-# SecureAuth Data Privacy Policy
+## SecureAuth Data Privacy Policy
 
 ## Introduction
 

@@ -15,7 +15,7 @@ tags:
   - gouvernance
 ---
 
-# Politique de Confidentialité de SecureAuth
+## Politique de Confidentialité de SecureAuth
 
 ## Introduction
 
