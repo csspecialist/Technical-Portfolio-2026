@@ -6,6 +6,10 @@ on:
       - 'src/content/docs/en/**'
   workflow_dispatch:
 
+# Add this block to silence the Node.js warning
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   translate:
     runs-on: ubuntu-latest
