@@ -6,6 +6,10 @@ on:
       - 'src/content/docs/en/**'
   workflow_dispatch:
 
+env:
+  # Force GitHub to use the latest Node.js runtime for actions
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   translate:
     runs-on: ubuntu-latest
@@ -14,12 +18,12 @@ jobs:
     
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5 # Updated to v5
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Updated to v5
         with:
-          python-version: '3.10'
+          python-version: '3.12' # Using a more modern Python for 2026
 
       - name: Install Google Generative AI Library
         run: pip install -q -U google-generativeai
@@ -36,30 +40,28 @@ jobs:
           genai.configure(api_key=os.environ['GEMINI_API_KEY'])
           model = genai.GenerativeModel('gemini-1.5-flash')
 
-          # The list of target folders you want to populate
           targets = ['fr', 'fr-ca']
 
           for target in targets:
-              # Find all English mdx files
               files = glob.glob('src/content/docs/en/**/*.mdx', recursive=True)
               
               for file_path in files:
-                  # Create the target path (e.g., replace /en/ with /fr/)
                   target_path = file_path.replace('/en/', f'/{target}/')
                   os.makedirs(os.path.dirname(target_path), exist_ok=True)
 
                   with open(file_path, 'r') as f:
                       content = f.read()
 
-                  # Your Architect Prompt
                   dialect = "Quebec Professional French (using 'courriel')" if target == 'fr-ca' else "Standard International French"
-                  prompt = f"Translate the following Markdown to {dialect}. Preserve all Frontmatter (text between ---) and Starlight components (:::). Keep code blocks in English:\n\n{content}"
+                  prompt = f"Translate the following Markdown to {dialect}. Preserve all Frontmatter and Starlight components (:::). Keep code blocks in English:\n\n{content}"
                   
-                  response = model.generate_content(prompt)
-                  
-                  with open(target_path, 'w') as f:
-                      f.write(response.text)
-                  print(f"Localized: {target_path}")
+                  try:
+                      response = model.generate_content(prompt)
+                      with open(target_path, 'w', encoding='utf-8') as f:
+                          f.write(response.text)
+                      print(f"Localized: {target_path}")
+                  except Exception as e:
+                      print(f"Error translating {file_path}: {e}")
           EOF
 
       - name: Commit and Push
@@ -67,5 +69,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "bot: AI-powered localization update" || echo "No changes to commit"
+          git commit -m "bot: Modernized AI localization pipeline" || echo "No changes to commit"
           git push
