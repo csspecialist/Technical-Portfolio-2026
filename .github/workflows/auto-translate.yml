@@ -3,7 +3,8 @@ name: AI-Powered Localization (Gemini)
 on:
   push:
     paths:
-      - 'src/content/docs/en/**' # Trigger only when English docs change
+      - 'src/content/docs/en/**'
+  workflow_dispatch: # This line adds the manual "Run" button!
 
 jobs:
   translate:
