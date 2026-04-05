@@ -1,22 +1,82 @@
 ---
-title: AI Automation Test
-description: A technical test to verify the Gemini localization pipeline.
+title: Connect to the Company VPN
+description: Learn how to install Cisco AnyConnect and authenticate to the company VPN using your Active Directory credentials and Duo MFA.
 lang: en
 ---
 
 ## Overview
-This is a test of the **CI/CD Localization Engine**. 
 
-1. Enter your **email** address in the portal.
-2. Click **Submit** to trigger the process.
+The company VPN uses **Cisco AnyConnect** as the client and **Duo Security** for multi-factor authentication (MFA). You need both before you can access internal resources remotely.
+
+## Prerequisites
+
+- A company-issued account with Active Directory (AD) credentials
+- A smartphone with the **Duo Mobile** app installed and enrolled
+- Internet access
 
 :::note
-This is a Starlight component. It should remain a component in the French versions.
+If you have not yet enrolled your device in Duo, contact the IT Help Desk before proceeding.
 :::
+
+---
+
+## Steps
+
+### 1. Install Cisco AnyConnect
+
+1. Go to the internal software portal or contact IT to obtain the **Cisco AnyConnect** installer for your operating system.
+2. Run the installer and follow the on-screen prompts.
+3. Restart your machine if prompted.
+
+:::tip
+Accept the default installation path. Custom paths may cause issues with future updates.
+:::
+
+---
+
+### 2. Connect to the VPN Gateway
+
+1. Open **Cisco AnyConnect Secure Mobility Client**.
+2. In the connection field, enter `vpn.company.com`.
+3. Click **Connect**.
+
+---
+
+### 3. Authenticate with AD Credentials
+
+1. When prompted, enter your **Active Directory username** (typically in `firstname.lastname` or `DOMAIN\username` format).
+2. Enter your **AD password**.
+3. Click **OK**.
 
 :::caution
-Do not close the browser during the upload.
+Do not use your personal email address or a local machine password. Use the same credentials you use to log in to your work computer or Microsoft 365.
 :::
 
-### Technical Details
-The system uses `npm run build` to generate the static files.
+---
+
+### 4. Approve the Duo MFA Prompt
+
+1. Once your AD credentials are accepted, a push notification is sent to your enrolled device via **Duo Mobile**.
+2. Open the **Duo Mobile** app on your phone.
+3. Tap **Approve**.
+
+:::caution
+You have **30 seconds** to approve the Duo push notification. If the request times out, the VPN connection attempt will fail. Return to Cisco AnyConnect and click **Connect** again to start a new session.
+:::
+
+---
+
+## Result
+
+After approval, Cisco AnyConnect displays a **Connected** status. You now have secure access to internal company resources.
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| "Authentication failed" | Incorrect AD credentials | Verify your username and password |
+| Duo push never arrives | Device not enrolled or no data connection | Check Duo enrollment; use a Wi-Fi or cellular connection |
+| Connection times out immediately | Wrong VPN gateway address | Confirm the address is `vpn.company.com` |
+| Push expires before you approve | Response took longer than 30 seconds | Reconnect and approve promptly |
