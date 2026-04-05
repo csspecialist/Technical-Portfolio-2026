@@ -1,0 +1,47 @@
+name: AI-Powered Localization (Gemini)
+
+on:
+  push:
+    paths:
+      - 'src/content/docs/en/**' # Trigger only when English docs change
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Allows the bot to push translated files back to your repo
+    strategy:
+      matrix:
+        # We run the process twice: once for fr and once for fr-ca
+        target: [fr, fr-ca]
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Auto-Translate via Gemini
+        uses: liling-dev/markdown-translate-ai@v1
+        with:
+          api_key: ${{ secrets.GEMINI_API_KEY }}
+          service_provider: 'gemini'
+          model: 'gemini-1.5-flash'
+          source_language: 'English'
+          target_language: ${{ matrix.target == 'fr' && 'French' || 'French (Canada)' }}
+          file_path: 'src/content/docs/en/*.mdx'
+          output_file_path: 'src/content/docs/${{ matrix.target }}/*.mdx'
+          # "Architect" rules:
+          custom_prompt: |
+            Translate the following technical documentation into ${{ matrix.target == 'fr' && 'International French' || 'Quebec Professional French' }}.
+            Rules:
+            1. Preserve all Astro/Starlight frontmatter (the text between ---).
+            2. Preserve all Starlight components (e.g., :::note, :::caution).
+            3. For 'fr-ca', use terms like 'courriel' instead of 'email'.
+            4. Keep all code blocks exactly as they are.
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "bot: AI-localized update for ${{ matrix.target }}" || echo "No changes to commit"
+          git push
