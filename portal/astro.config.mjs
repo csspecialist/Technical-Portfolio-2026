@@ -61,8 +61,8 @@ export default defineConfig({
         {
           label: 'Standard Operating Procedures',
           translations: {
-            fr: 'Modes opératoires standard',
-            'fr-CA': 'Procédures opératoires normalisées',
+            fr: 'Modes opératoires',
+            'fr-CA': 'Procédures opérationnelles normalisées',
           },
           autogenerate: { directory: 'sops' },
         },
