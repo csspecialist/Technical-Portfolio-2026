@@ -6,10 +6,6 @@ on:
       - 'src/content/docs/en/**'
   workflow_dispatch:
 
-env:
-  # Force GitHub to use the latest Node.js runtime for actions
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   translate:
     runs-on: ubuntu-latest
@@ -18,12 +14,12 @@ jobs:
     
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v5 # Updated to v5
+        uses: actions/checkout@v4 # Reverting to v4 to stop the Node 24 force-error
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Updated to v5
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12' # Using a more modern Python for 2026
+          python-version: '3.11'
 
       - name: Install Google Generative AI Library
         run: pip install -q -U google-generativeai
@@ -36,32 +32,53 @@ jobs:
           import os
           import google.generativeai as genai
           import glob
+          import time
 
+          # 1. Setup
           genai.configure(api_key=os.environ['GEMINI_API_KEY'])
           model = genai.GenerativeModel('gemini-1.5-flash')
-
+          
           targets = ['fr', 'fr-ca']
+          english_files = glob.glob('src/content/docs/en/**/*.mdx', recursive=True)
+
+          if not english_files:
+              print("❌ No English files found in src/content/docs/en/")
+              exit(0)
 
           for target in targets:
-              files = glob.glob('src/content/docs/en/**/*.mdx', recursive=True)
-              
-              for file_path in files:
+              print(f"🚀 Starting translation for target: {target}")
+              for file_path in english_files:
+                  # Create the target path
                   target_path = file_path.replace('/en/', f'/{target}/')
                   os.makedirs(os.path.dirname(target_path), exist_ok=True)
 
-                  with open(file_path, 'r') as f:
+                  with open(file_path, 'r', encoding='utf-8') as f:
                       content = f.read()
 
-                  dialect = "Quebec Professional French (using 'courriel')" if target == 'fr-ca' else "Standard International French"
-                  prompt = f"Translate the following Markdown to {dialect}. Preserve all Frontmatter and Starlight components (:::). Keep code blocks in English:\n\n{content}"
+                  print(f"📖 Reading: {file_path}")
+                  
+                  dialect = "Quebec French (use 'courriel')" if target == 'fr-ca' else "Standard International French"
+                  prompt = f"You are a technical translator. Translate the following MDX content into {dialect}. Keep the YAML frontmatter and any ::: components exactly as they are. DO NOT translate code blocks. Return ONLY the translated markdown.\n\n{content}"
                   
                   try:
+                      # 2. Call Gemini
                       response = model.generate_content(prompt)
+                      
+                      # 3. Validation
+                      if not response.text:
+                          print(f"⚠️ Gemini returned empty text for {file_path}")
+                          continue
+                          
                       with open(target_path, 'w', encoding='utf-8') as f:
                           f.write(response.text)
-                      print(f"Localized: {target_path}")
+                      
+                      print(f"✅ Success: {target_path}")
+                      
+                      # 4. Rate Limiting (Prevent hitting API limits too fast)
+                      time.sleep(2) 
+                      
                   except Exception as e:
-                      print(f"Error translating {file_path}: {e}")
+                      print(f"❌ ERROR translating {file_path} to {target}: {e}")
           EOF
 
       - name: Commit and Push
@@ -69,5 +86,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "bot: Modernized AI localization pipeline" || echo "No changes to commit"
+          git commit -m "bot: Fixed AI localization logic and encoding" || echo "No changes to commit"
           git push
