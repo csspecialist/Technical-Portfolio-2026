@@ -20,7 +20,7 @@ following a "Docs-as-Code" methodology.
 
 ## 🛠️ Tech Stack & Validation
 
-- **Framework**: [Astro Starlight](https://starlight.astro.build/) (Documentation Engine).
+- **Framework**: [Astro Starlight](https://technical-portfolio-woad.vercel.app/) (Documentation Engine).
 - **Architecture**: Internationalization (i18n) with strict locale routing (`en`, `fr`, `fr-ca`).
 - **Markdown**: Advanced frontmatter for automated sidebar generation.
 - **Standards**: ISO 27001, OQLF (Loi 96) & RGPD (ANSSI).
