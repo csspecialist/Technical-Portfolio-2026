@@ -1,19 +1,22 @@
 ---
-title: "Politique de Confidentialité des Données"
-description: "Directives de conformité pour le traitement des données chez SecureAuth, alignées sur l'ISO 27001 et la Loi 25."
+title: "Politique de Protection des Renseignements Personnels"
+description: Cadre de conformité pour le traitement des données chez SecureAuth, aligné sur l'ISO 27001 et les exigences de la Loi 25 du Québec.
 lang: fr-ca
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-04-01"
 author: "Maliki Kamara"
+# Architecture Astro & Métadonnées IA (RAG)
+sidebar:
+  label: "Protection des Données (Loi 25)"
+  order: 1
+category: Gouvernance et Risques
+complexity: Avancé
 standard_alignment:
   - ISO/IEC 27001:2022
-  - Loi 25 (Québec)
+  - Loi 25 (Québec - Renseignements personnels)
   - RGPD
-tags:
-  - conformité
-  - confidentialité
-  - gouvernance
+tags: [conformité, renseignements-personnels, loi-25, gouvernance, cybersécurité]
 ---
 
 ## Politique de Confidentialité de SecureAuth

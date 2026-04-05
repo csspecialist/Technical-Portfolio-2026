@@ -1,6 +1,15 @@
 ---
-title: Guide de démarrage rapide SecureAuth
-description: Apprenez à configurer l'authentification multifacteur en quelques minutes.
+title: "Guide de démarrage rapide : API SecureAuth"
+description: Un guide de 5 minutes pour authentifier votre premier appel API via OAuth 2.0.
+sidebar:
+  label: "Démarrage rapide API"
+  order: 2
+# Métadonnées pour l'IA et l'Expérience Développeur (DX)
+category: Developer Experience
+complexity: Intermédiaire
+duration: 5 min
+tags: [API, Authentification, Sécurité, Quickstart, OAuth2]
+lastUpdated: true
 ---
 
 ## SecureAuth — Guide de démarrage rapide

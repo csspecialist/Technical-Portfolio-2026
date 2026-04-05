@@ -1,19 +1,23 @@
 ---
-title: "PON (SOP) – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3"
-description: "Procédure d'exploitation normalisée pour la configuration du VPN avec authentification multifacteur."
+title: "PON (SOP) – Configuration VPN sécurisé avec AMF (Soutien L3)"
+description: Procédure opératoire normalisée (PON) pour la configuration des tunnels VPN et de l'authentification multifacteur.
 lang: fr-ca
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-03-31"
 author: "Maliki Kamara"
+# Architecture Astro & Métadonnées IA (RAG)
+sidebar:
+  label: "PON : Config VPN & AMF"
+  order: 3
+category: Infrastructure L3
+complexity: Avancé
+duration: 15 min
 standard_alignment:
   - ISO/IEC 27001:2022
-  - Loi sur la langue officielle et commune du Québec (Loi 96)
-tags:
-  - cybersécurité
-  - vpn
-  - amf
-  - contrôle-d-accès
+  - Loi 96 (Langue officielle - Québec)
+  - Loi 25 (Protection des données)
+tags: [cybersécurité, vpn, amf, contrôle-d-accès, infrastructure]
 ---
 
 ## PON – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3

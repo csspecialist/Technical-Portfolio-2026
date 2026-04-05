@@ -36,27 +36,42 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Getting Started',
-          // Direct link to your primary quickstart
+          translations: {
+            fr: 'Premiers pas',
+            'fr-CA': 'Premiers pas',
+          },
           link: 'guides/auth-api-quickstart/', 
         },
         {
+          label: 'Governance & Compliance',
+          translations: {
+            fr: 'Gouvernance et conformité',
+            'fr-CA': 'Gouvernance et conformité',
+          },
+          autogenerate: { directory: 'compliance' },
+        },
+        {
           label: 'Core Guides',
-          // Automatically builds navigation based on the /guides/ folder
+          translations: {
+            fr: 'Guides essentiels',
+            'fr-CA': 'Guides essentiels',
+          },
           autogenerate: { directory: 'guides' },
         },
         {
           label: 'Standard Operating Procedures',
-          // Professional title for the SOPs section
+          translations: {
+            fr: 'Modes opératoires standard',
+            'fr-CA': 'Procédures opératoires normalisées',
+          },
           autogenerate: { directory: 'sops' },
         },
         {
-          label: 'Governance & Compliance',
-          // Organized section for regulatory/internal docs
-          autogenerate: { directory: 'compliance' },
-        },
-        {
           label: 'System Architecture',
-          // A dedicated spot for your high-level engineering docs
+          translations: {
+            fr: 'Architecture système',
+            'fr-CA': 'Architecture système',
+          },
           autogenerate: { directory: 'architecture' },
         },
       ],

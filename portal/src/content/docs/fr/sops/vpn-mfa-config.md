@@ -1,18 +1,21 @@
 ---
-title: "Mode opératoire (SOP) – Configuration du VPN avec MFA (Support L3)"
-description: "Procédure d'exploitation normalisée pour la configuration sécurisée du VPN et de l'authentification multifacteur pour l'équipe de support L3."
+title: "SOP – Configuration VPN sécurisé avec MFA (Support L3)"
+description: Procédure d'exploitation normalisée pour la configuration des tunnels chiffrés et de l'authentification multifacteur.
 version: "1.0.0"
 status: "Approuvé"
 date: "2026-04-01"
 author: "Maliki Kamara"
+# Architecture & Métadonnées IA
+sidebar:
+  label: "SOP : Config VPN & MFA"
+  order: 3
+category: Infrastructure L3
+complexity: Avancé
 standard_alignment:
   - ISO/IEC 27001:2022
-  - RGPD (Règlement général sur la protection des données)
-tags:
-  - cybersécurité
-  - vpn
-  - mfa
-  - contrôle-d-accès
+  - RGPD
+  - Loi 25 (Conformité Québec)
+tags: [cybersécurité, vpn, mfa, contrôle-d-accès, infrastructure]
 ---
 
 ## Mode opératoire – Configuration du VPN avec MFA (Support L3)

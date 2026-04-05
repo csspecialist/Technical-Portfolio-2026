@@ -1,17 +1,20 @@
 ---
-title: "SOP – Secure VPN with MFA Configuration for L3 Support Engineers"
-description: "Standard Operating Procedure for L3 Support Engineers to configure secure VPN access with Multi-Factor Authentication."
+title: "SOP – Secure VPN with MFA Configuration"
+description: Standard Operating Procedure for L3 Engineers to configure encrypted tunnels and Multi-Factor Authentication.
 version: "1.0.0"
 status: "Approved"
 date: "2026-03-30"
 author: "Maliki Kamara"
+# Architecture & AI Metadata
+sidebar:
+  label: "SOP: VPN & MFA Config"
+  order: 3
+category: L3 Infrastructure
+complexity: Advanced
 standard_alignment:
   - ISO/IEC 27001:2022
-tags:
-  - cybersecurity
-  - vpn
-  - mfa
-  - access-control
+  - Loi 25 (Compliance)
+tags: [cybersecurity, vpn, mfa, access-control, infrastructure]
 ---
 
 ## SOP – Secure VPN with MFA Configuration for L3 Support Engineers

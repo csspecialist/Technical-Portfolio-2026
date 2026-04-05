@@ -1,6 +1,13 @@
 ---
-title: Auth API Quickstart
-description: A guide to getting started with our Authentication API.
+title: "Auth API Quickstart"
+description: A 5-minute guide to authenticating your first API call using OAuth 2.0.
+sidebar:
+  label: "API Quickstart"
+  order: 2
+# New AI-Specific Metadata
+category: Developer Experience
+complexity: Intermediate
+tags: [API, Authentication, Security, Quickstart]
 ---
 
 ## SecureAuth — Quickstart Guide
