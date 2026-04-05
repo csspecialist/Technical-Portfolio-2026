@@ -16,11 +16,13 @@ Every document must start with valid Astro Starlight YAML frontmatter containing
 
 Example:
 
+```yaml
 ---
 title: [Clear Task-Based Title]
 description: [One sentence explaining what the user will achieve]
 lang: [language key]
 ---
+```
 
 ### 2. Structure
 
