@@ -1,0 +1,1010 @@
+[
+    {
+        "id": "en-index.mdx-0",
+        "text": "import { Card, CardGrid } from '@astrojs/starlight/components';\n\n<div style=\"text-align: center; margin: 2rem 0; padding: 1.25rem 0; border-top: 2px solid var(--sl-color-accent); border-bottom: 2px solid var(--sl-color-accent);\">\n  <p style=\"font-size: 1.35rem; font-weight: 700; letter-spacing: 0.01em; margin: 0 0 0.5rem 0; color: var(--sl-color-white);\">Bilingual (EN/FR) · Docs-as-Code · AI-ready documentation</p>\n  <p style=\"font-size: 1.1rem; font-style: italic; margin: 0; color: var(--sl-color-gray-2);\">For SaaS, API-first, and compliance-driven teams</p>\n</div>",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "en",
+            "url_path": "/en/index"
+        }
+    },
+    {
+        "id": "en-index.mdx-1",
+        "text": "What I Do\n\n- API documentation and Quickstart guides\n- Developer onboarding systems\n- Docs-as-Code setup (Markdown, Git, CI/CD)\n- SOP and compliance documentation\n- AI-ready documentation (structured for RAG)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "en",
+            "url_path": "/en/index"
+        }
+    },
+    {
+        "id": "en-index.mdx-2",
+        "text": "How I Work\n\n1. Review your current documentation\n2. Identify gaps and friction points\n3. Design a clear and structured solution\n4. Deliver usable and maintainable documentation\n\n---",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "en",
+            "url_path": "/en/index"
+        }
+    },
+    {
+        "id": "en-index.mdx-3",
+        "text": "Need better documentation?\n\nI can review your API or internal documentation and suggest clear improvements.\n\n[**Request a Free Documentation Audit**](mailto:maliki.professional@gmail.com) · [**Connect on LinkedIn**](https://www.linkedin.com/in/maliki-kamara-10106643/)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "en",
+            "url_path": "/en/index"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-1",
+        "text": "SecureAuth Data Privacy Policy",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-2",
+        "text": "Introduction\n\nSecureAuth protects personal data in accordance with ISO 27001 and GDPR. This\npolicy explains how data is collected, processed, stored, and protected.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-3",
+        "text": "Scope\n\nThis policy applies to all users of the SecureAuth platform and covers all\nprocessing of personal data performed by SecureAuth.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-4",
+        "text": "Legal Basis for Processing\n\nSecureAuth processes personal data under GDPR principles, including lawfulness,\nfairness, transparency, purpose limitation, and data minimization.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-5",
+        "text": "Data Collection\n\nSecureAuth collects only the data required to deliver authentication, access\ncontrol, and security services. Data categories may include identifiers, login\nmetadata, and security event logs.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-6",
+        "text": "Data Use\n\nPersonal data is used strictly for authentication, fraud prevention, platform\nsecurity, and compliance with legal obligations.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-7",
+        "text": "Data Storage and Sovereignty\n\nAll personal data is stored exclusively within the European Union or Canada.\nSecureAuth ensures that no data is transferred outside these regions without\nadequate safeguards.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-8",
+        "text": "Data Security\n\nSecureAuth applies ISO 27001 controls and uses AES-256 encryption for data at\nrest. Data in transit is protected using industry-standard TLS encryption.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-9",
+        "text": "Data Retention\n\nPersonal data is retained only for the duration necessary to fulfill the stated\npurposes or to meet legal and regulatory requirements.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-10",
+        "text": "Right to Access\n\nUsers may request confirmation of whether SecureAuth processes their personal\ndata and may obtain a copy of such data in a structured format.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-11",
+        "text": "Right to Erasure\n\nUsers may request deletion of their personal data under the GDPR \"Right to be\nForgotten.\" SecureAuth will erase the data unless retention is required by law.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-12",
+        "text": "Third-Party Processors\n\nSecureAuth may use vetted processors that comply with ISO 27001 and GDPR. All\nprocessors operate under binding agreements ensuring equivalent protection.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-13",
+        "text": "Incident Management\n\nSecurity incidents are handled under ISO 27001 Annex A controls. Users will be\nnotified of breaches when required by GDPR.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-data-privacy.mdx-14",
+        "text": "Contact\n\nFor privacy inquiries or rights requests, contact the SecureAuth Data Protection\nOfficer at: dpo@secureauth.example.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "en",
+            "url_path": "/en/data-privacy"
+        }
+    },
+    {
+        "id": "en-enterprise-security-hub.mdx-0",
+        "text": "Welcome to the SecureAuth Enterprise Security & Compliance Hub. \n\nIn a modern SaaS environment—especially when dealing with software monetization and usage-based licensing—security cannot be an afterthought. It must be engineered directly into the documentation architecture.\n\nThis pillar page serves as the central directory for our security protocols, connecting our high-level governance policies to our granular, developer-focused implementation guides.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "en",
+            "url_path": "/en/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "en-enterprise-security-hub.mdx-1",
+        "text": "1. Data Governance & Regulatory Compliance\n\nTo operate globally, our systems must adhere to strict data privacy regulations. We maintain parallel compliance frameworks to ensure international operational readiness, specifically targeting **ISO 27001** and Quebec's **Loi 25**.\n\n* **[Read the Data Privacy Policy (Loi 25 / ISO 27001)](/en/compliance/data-privacy)**\n  * *Topics covered:* Data residency, PII handling, user consent tracking, and regulatory audit preparation.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "en",
+            "url_path": "/en/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "en-enterprise-security-hub.mdx-2",
+        "text": "2. Internal Access Management\n\nZero-Trust architecture begins with secure internal access. All technical staff interacting with the production API infrastructure must adhere to our standardized operating procedures for secure connectivity.\n\n* **[View the VPN & MFA Configuration SOP](/en/sops/vpn-mfa-config)**\n  * *Topics covered:* Authenticator app provisioning, secure tunnel routing, and conditional access policies.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "en",
+            "url_path": "/en/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "en-enterprise-security-hub.mdx-3",
+        "text": "3. Secure API Implementation\n\nFor developers integrating our authentication and monetization endpoints, security must be built into the first call. Our quickstarts are designed to ensure tokens are handled securely from Day 1.\n\n* **[Start the Auth API Quickstart](/en/guides/auth-api-quickstart)**\n  * *Topics covered:* Generating secure bearer tokens, rate limiting, and handling authentication webhooks safely.\n\n---\n\n> ### Information Architecture Notice\n> **For Engineering Teams:** This page demonstrates the **\"Hub and Spoke\" SEO content model**. By aggregating related child topics (SOPs, APIs, Policies) into a single, highly structured Pillar Page, we increase the semantic relevance of the entire topic cluster.\n>\n> **Strategy Note:** My background includes **3 years as a freelance SEO Web Writer**, allowing me to bridge the gap between technical accuracy and high-visibility content growth.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "en",
+            "url_path": "/en/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "en-auth-api-quickstart.mdx-1",
+        "text": "SecureAuth — Quickstart Guide\n\nGet up and running with MFA enrollment and verification in minutes.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "en",
+            "url_path": "/en/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "en-auth-api-quickstart.mdx-2",
+        "text": "Prerequisites\n\n- A valid SecureAuth account\n- Your Bearer Token (issued from the developer dashboard)\n- A TOTP-compatible authenticator app (e.g., Google Authenticator,\n  Authy)",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "en",
+            "url_path": "/en/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "en-auth-api-quickstart.mdx-3",
+        "text": "Authentication\n\nAll requests require an `Authorization` header containing your Bearer\nToken.\n\n```http\nAuthorization: Bearer <YOUR_TOKEN>\n```",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "en",
+            "url_path": "/en/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "en-auth-api-quickstart.mdx-4",
+        "text": "Endpoints\n\n### POST /v1/mfa/enroll\n\nEnrolls a user in TOTP-based multi-factor authentication.\n\n#### Enrollment Request\n\n```http\nPOST /v1/mfa/enroll HTTP/1.1\nHost: api.secureauth.io\nAuthorization: Bearer <YOUR_TOKEN>\nContent-Type: application/json\n\n{\n  \"user_id\": \"usr_01HXYZ\",\n  \"method\": \"totp\"\n}\n```\n\n#### Enrollment Response — 200 OK\n\n```json\n{\n  \"enrollment_id\": \"enr_09ABCD\",\n  \"totp_uri\": \"otpauth://totp/SecureAuth:usr_01HXYZ?secret=SECRET32\",\n  \"qr_code_url\": \"https://api.secureauth.io/qr/enr_09ABCD.png\"\n}\n```\n\n#### Enrollment Response Fields\n\n| Field           | Type   | Description                           |\n||\n| `enrollment_id` | string | Unique identifier for this enrollment |\n| `totp_uri`      | string | OTP Auth URI for authenticator apps   |\n| `qr_code_url`   | string | URL to the scannable QR code image    |\n\n--||\n| `enrollment_id` | string  | Enrollment ID returned at enroll step |\n| `totp_code`     | string  | 6-digit code from your authenticator  |\n| `verified`      | boolean | `true` if verification succeeded      |\n| `session_token` | string  | Session token issued on success       |",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "en",
+            "url_path": "/en/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "en-auth-api-quickstart.mdx-5",
+        "text": "Next Steps\n\n- Review rate limits in the full [API Reference](../api-reference.md).\n- Enable backup codes via `POST /v1/mfa/backup`.\n- Contact support at support@secureauth.io.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "en",
+            "url_path": "/en/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-1",
+        "text": "SOP – Secure VPN with MFA Configuration for L3 Support Engineers",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-2",
+        "text": "2. Scope\n\nThis SOP applies to:\n\n- L3 support engineers requiring privileged remote access\n- Corporate-managed endpoints (Windows, macOS, Linux)\n- Approved VPN gateways and identity providers (IdPs)\n\nThis SOP excludes:\n\n- Non-privileged users\n- Unmanaged or personal devices (BYOD)\n- Users without approved access rights",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-3",
+        "text": "4. Roles and Responsibilities\n\n| Role | Responsibility |\n||",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-4",
+        "text": "5. Process Overview\n\nThe VPN authentication process follows these steps:\n\n1. The engineer initiates a VPN connection using the approved client.\n2. The VPN client sends an access request to the VPN gateway.\n3. The VPN gateway forwards authentication to the Identity Provider (IdP).\n4. The IdP validates credentials and triggers an MFA challenge.\n5. The engineer completes the MFA challenge.\n6. Upon successful authentication, a secure VPN tunnel is established.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-5",
+        "text": "7. Prerequisites\n\nBefore starting, ensure:\n\n- Active corporate account with approved privileged access\n- Device enrolled in endpoint management (e.g., Intune, JAMF)\n- MFA configured with at least two factors\n- Approved VPN client installed\n- VPN gateway URL and credentials available\n- Required certificates installed (if applicable)",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-6",
+        "text": "8.2 Configure MFA\n\n### Step 5 – Enroll MFA\n\n- Register at least two factors:\n  - Authenticator app (primary)\n  - Backup method (hardware token or recovery code)\n\n### Step 6 – Validate MFA\n\n- Perform test authentication\n- Confirm MFA challenge is triggered\n- Confirm successful authentication",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-7",
+        "text": "8.4 Post-Connection Validation\n\n### Step 9 – Validate Network Access\n\n- Resolve internal DNS\n- Access internal systems\n- Confirm VPN IP assignment\n\n### Step 10 – Validate Security Status\n\n- Confirm endpoint compliance\n- Verify split tunneling is disabled\n- Confirm logs appear in SIEM",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-8",
+        "text": "10. Failure Handling\n\n| Issue | Action |\n||--|\n| MFA not triggered | Re-enroll MFA or check IdP |\n| VPN connection fails | Verify DNS, certificates, compliance |\n| Authentication failure | Reset credentials or escalate |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-9",
+        "text": "12. Security Risks\n\n- Unauthorized access without MFA\n- Misconfigured VPN exposing internal traffic\n- Split tunneling leading to data leakage",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-10",
+        "text": "14. Records and Evidence\n\n| Record | Retention |\n|--|",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-11",
+        "text": "15. Change Management\n\n- Submit formal change request\n- Obtain approval from IT Security and IAM\n- Update SOP version and revision history\n- Communicate changes to stakeholders",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-12",
+        "text": "17. Appendices",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-13",
+        "text": "Appendix A – Approved VPN Clients\n\n- Cisco AnyConnect\n- Palo Alto GlobalProtect\n- Fortinet FortiClient\n- OpenVPN\n- WireGuard (if approved)",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-14",
+        "text": "Appendix B – Approved MFA Methods\n\n- Authenticator app (TOTP or push)\n- FIDO2 hardware token\n- Smartcard / PIV\n- Backup recovery codes",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "en-vpn-mfa-config.mdx-15",
+        "text": "Appendix C – Troubleshooting Quick Reference\n\n| Issue | Resolution |\n||-----|\n| No MFA prompt | Check device or re-enroll |\n| VPN failure | Validate certificates and DNS |\n| Split tunneling active | Reapply policy |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "en",
+            "url_path": "/en/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-index.mdx-0",
+        "text": "import { Card, CardGrid } from '@astrojs/starlight/components';\n\n<div style=\"text-align: center; margin: 2rem 0; padding: 1.25rem 0; border-top: 2px solid var(--sl-color-accent); border-bottom: 2px solid var(--sl-color-accent);\">\n  <p style=\"font-size: 1.35rem; font-weight: 700; letter-spacing: 0.01em; margin: 0 0 0.5rem 0; color: var(--sl-color-white);\">Bilingue (EN/FR) · Docs-as-Code · Documentation prête pour l'IA</p>\n  <p style=\"font-size: 1.1rem; font-style: italic; margin: 0; color: var(--sl-color-gray-2);\">Pour les équipes SaaS, API-first et axées sur la conformité</p>\n</div>",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr",
+            "url_path": "/fr/index"
+        }
+    },
+    {
+        "id": "fr-index.mdx-1",
+        "text": "Ce que je fais\n\n- Documentation API et guides de démarrage rapide\n- Systèmes d'intégration pour développeurs\n- Mise en place Docs-as-Code (Markdown, Git, CI/CD)\n- Documentation SOP et de conformité\n- Documentation structurée pour l'IA (RAG)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr",
+            "url_path": "/fr/index"
+        }
+    },
+    {
+        "id": "fr-index.mdx-2",
+        "text": "Ma méthode de travail\n\n1. Analyser votre documentation existante\n2. Identifier les lacunes et les points de friction\n3. Concevoir une solution claire et bien structurée\n4. Livrer une documentation utilisable et facile à maintenir\n\n---",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr",
+            "url_path": "/fr/index"
+        }
+    },
+    {
+        "id": "fr-index.mdx-3",
+        "text": "Votre documentation mérite mieux ?\n\nJe peux examiner votre documentation API ou interne et proposer des améliorations concrètes.\n\n[**Demander un audit gratuit de documentation**](mailto:maliki.professional@gmail.com) · [**Me contacter sur LinkedIn**](https://www.linkedin.com/in/maliki-kamara-10106643/)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr",
+            "url_path": "/fr/index"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-1",
+        "text": "Politique de Confidentialité de SecureAuth",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-2",
+        "text": "Introduction\n\nSecureAuth protège les données personnelles conformément à l’ISO 27001 et au\nRGPD. Cette politique décrit la collecte, le traitement, la conservation et la\nprotection des données.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-3",
+        "text": "Portée\n\nCette politique s’applique à tous les utilisateurs de la plateforme SecureAuth\net couvre l’ensemble des traitements de données personnelles réalisés par\nSecureAuth.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-4",
+        "text": "Base Légale du Traitement\n\nSecureAuth traite les données personnelles selon les principes du RGPD, dont la\nlicéité, l’équité, la transparence, la limitation des finalités et la\nminimisation des données.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-5",
+        "text": "Collecte des Données\n\nSecureAuth collecte uniquement les données nécessaires pour fournir\nl’authentification, le contrôle d’accès et les services de sécurité. Les\ncatégories peuvent inclure des identifiants, des métadonnées de connexion et\ndes journaux d’événements de sécurité.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-6",
+        "text": "Utilisation des Données\n\nLes données personnelles sont utilisées exclusivement pour l’authentification,\nla prévention de la fraude, la sécurité de la plateforme et le respect des\nobligations légales.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-7",
+        "text": "Stockage et Souveraineté des Données\n\nToutes les données personnelles sont stockées exclusivement dans l’Union\neuropéenne ou au Canada. SecureAuth garantit qu’aucun transfert hors de ces\nrégions n’est effectué sans garanties adéquates.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-8",
+        "text": "Sécurité des Données\n\nSecureAuth applique les contrôles ISO 27001 et utilise le chiffrement AES-256\npour les données au repos. Les données en transit sont protégées par un\nchiffrement TLS conforme aux normes du secteur.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-9",
+        "text": "Conservation des Données\n\nLes données personnelles sont conservées uniquement pour la durée nécessaire aux\nfinalités déclarées ou pour satisfaire aux exigences légales et réglementaires.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-10",
+        "text": "Droit d’Accès\n\nLes utilisateurs peuvent demander la confirmation du traitement de leurs données\net obtenir une copie dans un format structuré.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-11",
+        "text": "Droit à l’Effacement\n\nLes utilisateurs peuvent demander la suppression de leurs données personnelles\nen vertu du droit à l’oubli prévu par le RGPD. SecureAuth effacera les données\nsauf obligation légale de conservation.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-12",
+        "text": "Sous-Traitants\n\nSecureAuth peut recourir à des sous-traitants conformes à l’ISO 27001 et au\nRGPD. Tous les sous-traitants sont soumis à des accords garantissant un niveau\nde protection équivalent.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-13",
+        "text": "Gestion des Incidents\n\nLes incidents de sécurité sont gérés selon les contrôles de l’Annexe A de l’ISO\n27001. Les utilisateurs seront informés des violations lorsque requis par le\nRGPD.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-data-privacy.mdx-14",
+        "text": "Contact\n\nPour toute demande relative à la confidentialité ou à l’exercice de vos droits,\ncontactez le Délégué à la Protection des Données de SecureAuth à :\ndpo@secureauth.example.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr",
+            "url_path": "/fr/data-privacy"
+        }
+    },
+    {
+        "id": "fr-enterprise-security-hub.mdx-0",
+        "text": "Bienvenue sur le Hub de sécurité et de conformité SecureAuth Entreprise.\n\nDans un environnement SaaS moderne — particulièrement lorsqu'il s'agit de monétisation de logiciels et de licences basées sur l'usage — la sécurité ne peut pas être une réflexion après coup. Elle doit être intégrée directement dans l'architecture documentaire.\n\nCette page pilier constitue le répertoire central de nos protocoles de sécurité, reliant nos politiques de gouvernance de haut niveau à nos guides d'implémentation détaillés destinés aux développeurs.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr",
+            "url_path": "/fr/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-enterprise-security-hub.mdx-1",
+        "text": "1. Gouvernance des données et conformité réglementaire\n\nPour opérer à l'échelle internationale, nos systèmes doivent respecter des réglementations strictes en matière de confidentialité des données. Nous maintenons des cadres de conformité parallèles pour garantir une capacité opérationnelle internationale, ciblant spécifiquement l'**ISO 27001** et la **Loi 25** du Québec.\n\n* **[Lire la politique de confidentialité des données (Loi 25 / ISO 27001)](/fr/compliance/data-privacy)**\n  * *Sujets couverts :* Résidence des données, traitement des renseignements personnels, suivi du consentement des utilisateurs et préparation aux audits réglementaires.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr",
+            "url_path": "/fr/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-enterprise-security-hub.mdx-2",
+        "text": "2. Gestion des accès internes\n\nL'architecture Zéro Confiance commence par des accès internes sécurisés. Tout le personnel technique qui interagit avec l'infrastructure API de production doit respecter nos procédures opérationnelles standard pour une connectivité sécurisée.\n\n* **[Consulter la POS : Configuration VPN et AMF](/fr/sops/vpn-mfa-config)**\n  * *Sujets couverts :* Provisionnement de l'application d'authentification, routage par tunnel sécurisé et politiques d'accès conditionnel.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr",
+            "url_path": "/fr/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-enterprise-security-hub.mdx-3",
+        "text": "3. Implémentation sécurisée des API\n\nPour les développeurs qui intègrent nos points de terminaison d'authentification et de monétisation, la sécurité doit être intégrée dès le premier appel. Nos guides de démarrage rapide sont conçus pour garantir une gestion sécurisée des jetons dès le premier jour.\n\n* **[Démarrer avec le guide rapide de l'API Auth](/fr/guides/auth-api-quickstart)**\n  * *Sujets couverts :* Génération de jetons bearer sécurisés, limitation du débit et gestion sécurisée des webhooks d'authentification.\n\n---\n\n> ### Note sur l'architecture de l'information\n> **Pour les équipes d'ingénierie :** Cette page illustre le **modèle de contenu SEO \"Hub and Spoke\"**. En regroupant des sujets enfants connexes (POS, API, politiques) dans une page pilier unique et hautement structurée, on augmente la pertinence sémantique de l'ensemble du groupe thématique.\n>\n> **Note stratégique :** Mon parcours inclut **3 ans en tant que rédacteur web SEO indépendant**, ce qui me permet de faire le lien entre la précision technique et la croissance de la visibilité en ligne.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr",
+            "url_path": "/fr/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-1",
+        "text": "SecureAuth — Guide de démarrage rapide\n\nConfigurez l'enrôlement et la vérification AMF en quelques minutes.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-2",
+        "text": "Prérequis\n\n- Un compte SecureAuth actif\n- Votre jeton d'accès (Bearer Token), émis depuis le tableau de bord\n  développeur\n- Une application d'authentification compatible TOTP (ex. : Google\n  Authenticator, Authy)",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-3",
+        "text": "Authentification\n\nChaque requête doit inclure un en-tête `Authorization` contenant votre\njeton d'accès.\n\n```http\nAuthorization: Bearer <VOTRE_JETON>\n```",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-4",
+        "text": "Points de terminaison\n\n### POST /v1/mfa/enroll\n\nEnrôle un utilisateur dans l'authentification multifacteur (AMF) TOTP.\n\n#### Requête d'enrôlement\n\n```http\nPOST /v1/mfa/enroll HTTP/1.1\nHost: api.secureauth.io\nAuthorization: Bearer <VOTRE_JETON>\nContent-Type: application/json\n\n{\n  \"user_id\": \"usr_01HXYZ\",\n  \"method\": \"totp\"\n}\n```\n\n#### Réponse d'enrôlement — 200 OK\n\n```json\n{\n  \"enrollment_id\": \"enr_09ABCD\",\n  \"totp_uri\": \"otpauth://totp/SecureAuth:usr_01HXYZ?secret=SECRET32\",\n  \"qr_code_url\": \"https://api.secureauth.io/qr/enr_09ABCD.png\"\n}\n```\n\n#### Champs de la réponse d'enrôlement\n\n| Champ           | Type   | Description                              |\n|\n\n### POST /v1/mfa/verify\n\nVérifie un code TOTP soumis par l'utilisateur.\n\n#### Requête de vérification\n\n```http\nPOST /v1/mfa/verify HTTP/1.1\nHost: api.secureauth.io\nAuthorization: Bearer <VOTRE_JETON>\nContent-Type: application/json\n\n{\n  \"enrollment_id\": \"enr_09ABCD\",\n  \"totp_code\": \"123456\"\n}\n```\n\n#### Réponse de vérification — 200 OK\n\n```json\n{\n  \"verified\": true,\n  \"session_token\": \"sess_XYZ789...\"\n}\n```\n\n#### Réponse de vérification — 401 Non autorisé\n\n```json\n{\n  \"verified\": false,\n  \"error\": \"invalid_totp_code\"\n}\n```\n\n#### Champs de la réponse de vérification\n\n| Champ           | Type    | Description                             |\n||",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-5",
+        "text": "Codes d'erreur\n\n| Code                   | Statut | Description                              |\n||--||\n| `invalid_token`        | 401    | Jeton manquant ou invalide               |\n| `user_not_found`       | 404    | Identifiant `user_id` introuvable        |\n| `invalid_totp_code`    | 401    | Code TOTP incorrect ou expiré            |\n| `enrollment_not_found` | 404    | Aucun enrôlement trouvé pour cet ID      |\n\n---",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-auth-api-quickstart.mdx-6",
+        "text": "Étapes suivantes\n\n- Consultez les limites de débit dans la\n  [Référence API](../api-reference.md) complète.\n- Activez les codes de secours via `POST /v1/mfa/backup`.\n- Contactez le support à support@secureauth.io.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr",
+            "url_path": "/fr/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-vpn-mfa-config.mdx-1",
+        "text": "Mode opératoire – Configuration du VPN avec MFA (Support L3)",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr",
+            "url_path": "/fr/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-vpn-mfa-config.mdx-2",
+        "text": "2. Portée\n\nCette procédure s'applique aux :\n\n- Ingénieurs support de niveau 3 (L3).\n- Postes de travail gérés (Windows, macOS, Linux).\n- Passerelles VPN et fournisseurs d'identité (IdP) approuvés.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr",
+            "url_path": "/fr/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-vpn-mfa-config.mdx-3",
+        "text": "4. Rôles et responsabilités\n\n| Rôle | Responsabilité |\n| : |\n| **Support L3** | Appliquer la procédure et maintenir son MFA. |\n| **Cybersecurité** | Configurer le VPN et surveiller les journaux. |\n| **Équipe GIA** | Gérer les identités et l'enrôlement MFA. |\n| **Gestion de parc** | Assurer la conformité des postes de travail. |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr",
+            "url_path": "/fr/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-vpn-mfa-config.mdx-4",
+        "text": "6. Critères de vérification\n\n1. La connexion VPN est établie avec succès.\n2. L'accès aux ressources internes est validé par un test de flux.\n3. Les journaux de connexion sont visibles dans le SIEM.\n\n---\n\n> **Note de conformité (Europe) :** Ce document respecte les exigences du\n> RGPD concernant la sécurisation des accès et les recommandations de\n> l'ANSSI pour la protection des systèmes d'information.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr",
+            "url_path": "/fr/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-index.mdx-0",
+        "text": "import { Card, CardGrid } from '@astrojs/starlight/components';\n\n<div style=\"text-align: center; margin: 2rem 0; padding: 1.25rem 0; border-top: 2px solid var(--sl-color-accent); border-bottom: 2px solid var(--sl-color-accent);\">\n  <p style=\"font-size: 1.35rem; font-weight: 700; letter-spacing: 0.01em; margin: 0 0 0.5rem 0; color: var(--sl-color-white);\">Bilingue (EN/FR) · Docs-as-Code · Documentation prête pour l'IA</p>\n  <p style=\"font-size: 1.1rem; font-style: italic; margin: 0; color: var(--sl-color-gray-2);\">Pour les équipes SaaS, API-first et axées sur la conformité</p>\n</div>",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/index"
+        }
+    },
+    {
+        "id": "fr-ca-index.mdx-1",
+        "text": "Ce que je fais\n\n- Documentation API et guides de démarrage rapide\n- Systèmes d'intégration pour développeurs\n- Mise en place Docs-as-Code (Markdown, Git, CI/CD)\n- Documentation POS et de conformité\n- Documentation structurée pour l'IA (RAG)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/index"
+        }
+    },
+    {
+        "id": "fr-ca-index.mdx-2",
+        "text": "Ma façon de travailler\n\n1. Analyser votre documentation existante\n2. Repérer les lacunes et les points de friction\n3. Concevoir une solution claire et bien structurée\n4. Livrer une documentation utilisable et facile à maintenir\n\n---",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/index"
+        }
+    },
+    {
+        "id": "fr-ca-index.mdx-3",
+        "text": "Votre documentation mérite mieux ?\n\nJe peux analyser votre documentation API ou interne et vous proposer des améliorations concrètes.\n\n[**Demander un audit gratuit de documentation**](mailto:maliki.professional@gmail.com) · [**Me joindre sur LinkedIn**](https://www.linkedin.com/in/maliki-kamara-10106643/)",
+        "metadata": {
+            "source": "index.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/index"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-1",
+        "text": "Politique de Confidentialité de SecureAuth",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-2",
+        "text": "Introduction\n\nSecureAuth protège les données personnelles conformément à l’ISO 27001 et au\nRGPD. Cette politique décrit la collecte, le traitement, la conservation et la\nprotection des données.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-3",
+        "text": "Portée\n\nCette politique s’applique à tous les utilisateurs de la plateforme SecureAuth\net couvre l’ensemble des traitements de données personnelles réalisés par\nSecureAuth.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-4",
+        "text": "Base Légale du Traitement\n\nSecureAuth traite les données personnelles selon les principes du RGPD, dont la\nlicéité, l’équité, la transparence, la limitation des finalités et la\nminimisation des données.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-5",
+        "text": "Collecte des Données\n\nSecureAuth collecte uniquement les données nécessaires pour fournir\nl’authentification, le contrôle d’accès et les services de sécurité. Les\ncatégories peuvent inclure des identifiants, des métadonnées de connexion et\ndes journaux d’événements de sécurité.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-6",
+        "text": "Utilisation des Données\n\nLes données personnelles sont utilisées exclusivement pour l’authentification,\nla prévention de la fraude, la sécurité de la plateforme et le respect des\nobligations légales.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-7",
+        "text": "Stockage et Souveraineté des Données\n\nToutes les données personnelles sont stockées exclusivement dans l’Union\neuropéenne ou au Canada. SecureAuth garantit qu’aucun transfert hors de ces\nrégions n’est effectué sans garanties adéquates.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-8",
+        "text": "Sécurité des Données\n\nSecureAuth applique les contrôles ISO 27001 et utilise le chiffrement AES-256\npour les données au repos. Les données en transit sont protégées par un\nchiffrement TLS conforme aux normes du secteur.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-9",
+        "text": "Conservation des Données\n\nLes données personnelles sont conservées uniquement pour la durée nécessaire aux\nfinalités déclarées ou pour satisfaire aux exigences légales et réglementaires.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-10",
+        "text": "Droit d’Accès\n\nLes utilisateurs peuvent demander la confirmation du traitement de leurs données\net obtenir une copie dans un format structuré.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-11",
+        "text": "Droit à l’Effacement\n\nLes utilisateurs peuvent demander la suppression de leurs données personnelles\nen vertu du droit à l’oubli prévu par le RGPD. SecureAuth effacera les données\nsauf obligation légale de conservation.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-12",
+        "text": "Sous-Traitants\n\nSecureAuth peut recourir à des sous-traitants conformes à l’ISO 27001 et au\nRGPD. Tous les sous-traitants sont soumis à des accords garantissant un niveau\nde protection équivalent.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-13",
+        "text": "Gestion des Incidents\n\nLes incidents de sécurité sont gérés selon les contrôles de l’Annexe A de l’ISO\n27001. Les utilisateurs seront informés des violations lorsque requis par le\nRGPD.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-data-privacy.mdx-14",
+        "text": "Contact\n\nPour toute demande relative à la confidentialité ou à l’exercice de vos droits,\ncontactez le Délégué à la Protection des Données de SecureAuth à :\ndpo@secureauth.example.",
+        "metadata": {
+            "source": "data-privacy.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/data-privacy"
+        }
+    },
+    {
+        "id": "fr-ca-enterprise-security-hub.mdx-0",
+        "text": "Bienvenue sur le Hub de sécurité et de conformité SecureAuth Entreprise.\n\nDans un environnement SaaS moderne — particulièrement lorsqu'il s'agit de monétisation de logiciels et de licences basées sur l'utilisation — la sécurité ne peut pas être une réflexion après coup. Elle doit être intégrée directement dans l'architecture documentaire.\n\nCette page pilier constitue le répertoire central de nos protocoles de sécurité, reliant nos politiques de gouvernance de haut niveau à nos guides d'implémentation détaillés destinés aux développeurs.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-ca-enterprise-security-hub.mdx-1",
+        "text": "1. Gouvernance des données et conformité réglementaire\n\nPour opérer à l'échelle internationale, nos systèmes doivent respecter des réglementations strictes en matière de confidentialité des données. Nous maintenons des cadres de conformité parallèles pour garantir une capacité opérationnelle internationale, ciblant spécifiquement l'**ISO 27001** et la **Loi 25** du Québec.\n\n* **[Lire la politique de confidentialité des données (Loi 25 / ISO 27001)](/fr-ca/compliance/data-privacy)**\n  * *Sujets couverts :* Résidence des données, traitement des renseignements personnels, suivi du consentement des utilisateurs et préparation aux audits réglementaires.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-ca-enterprise-security-hub.mdx-2",
+        "text": "2. Gestion des accès internes\n\nL'architecture Zéro Confiance commence par des accès internes sécurisés. Tout le personnel technique qui interagit avec l'infrastructure API de production doit respecter nos procédures opérationnelles normalisées pour une connectivité sécurisée.\n\n* **[Consulter la PON : Configuration VPN et AMF](/fr-ca/sops/vpn-mfa-config)**\n  * *Sujets couverts :* Approvisionnement de l'application d'authentification, routage par tunnel sécurisé et politiques d'accès conditionnel.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-ca-enterprise-security-hub.mdx-3",
+        "text": "3. Implémentation sécurisée des API\n\nPour les développeurs qui intègrent nos points de service d'authentification et de monétisation, la sécurité doit être intégrée dès le premier appel. Nos guides de démarrage rapide sont conçus pour garantir une gestion sécurisée des jetons dès le départ.\n\n* **[Démarrer avec le guide rapide de l'API Auth](/fr-ca/guides/auth-api-quickstart)**\n  * *Sujets couverts :* Génération de jetons bearer sécurisés, limitation du débit et gestion sécurisée des webhooks d'authentification.\n\n---\n\n> ### Note sur l'architecture de l'information\n> **Pour les équipes de génie logiciel :** Cette page illustre le **modèle de contenu SEO \"Hub and Spoke\"**. En regroupant des sujets enfants connexes (PON, API, politiques) dans une page pilier unique et hautement structurée, on augmente la pertinence sémantique de l'ensemble du groupe thématique.\n>\n> **Note stratégique :** Mon parcours inclut **3 ans à titre de rédacteur web SEO pigiste**, ce qui me permet de faire le pont entre la précision technique et la croissance de la visibilité en ligne.",
+        "metadata": {
+            "source": "enterprise-security-hub.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/enterprise-security-hub"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-1",
+        "text": "SecureAuth — Guide de démarrage rapide\n\nConfigurez l'enrôlement et la vérification AMF en quelques minutes.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-2",
+        "text": "Prérequis\n\n- Un compte SecureAuth actif\n- Votre jeton d'accès (Bearer Token), émis depuis le tableau de bord\n  développeur\n- Une application d'authentification compatible TOTP (ex. : Google\n  Authenticator, Authy)",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-3",
+        "text": "Authentification\n\nChaque requête doit inclure un en-tête `Authorization` contenant votre\njeton d'accès.\n\n```http\nAuthorization: Bearer <VOTRE_JETON>\n```",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-4",
+        "text": "Points de terminaison\n\n### POST /v1/mfa/enroll\n\nEnrôle un utilisateur dans l'authentification multifacteur (AMF) TOTP.\n\n#### Requête d'enrôlement\n\n```http\nPOST /v1/mfa/enroll HTTP/1.1\nHost: api.secureauth.io\nAuthorization: Bearer <VOTRE_JETON>\nContent-Type: application/json\n\n{\n  \"user_id\": \"usr_01HXYZ\",\n  \"method\": \"totp\"\n}\n```\n\n#### Réponse d'enrôlement — 200 OK\n\n```json\n{\n  \"enrollment_id\": \"enr_09ABCD\",\n  \"totp_uri\": \"otpauth://totp/SecureAuth:usr_01HXYZ?secret=SECRET32\",\n  \"qr_code_url\": \"https://api.secureauth.io/qr/enr_09ABCD.png\"\n}\n```\n\n#### Champs de la réponse d'enrôlement\n\n| Champ           | Type   | Description                              |\n|\n\n### POST /v1/mfa/verify\n\nVérifie un code TOTP soumis par l'utilisateur.\n\n#### Requête de vérification\n\n```http\nPOST /v1/mfa/verify HTTP/1.1\nHost: api.secureauth.io\nAuthorization: Bearer <VOTRE_JETON>\nContent-Type: application/json\n\n{\n  \"enrollment_id\": \"enr_09ABCD\",\n  \"totp_code\": \"123456\"\n}\n```\n\n#### Réponse de vérification — 200 OK\n\n```json\n{\n  \"verified\": true,\n  \"session_token\": \"sess_XYZ789...\"\n}\n```\n\n#### Réponse de vérification — 401 Non autorisé\n\n```json\n{\n  \"verified\": false,\n  \"error\": \"invalid_totp_code\"\n}\n```\n\n#### Champs de la réponse de vérification\n\n| Champ           | Type    | Description                             |\n||",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-5",
+        "text": "Codes d'erreur\n\n| Code                   | Statut | Description                              |\n||--||\n| `invalid_token`        | 401    | Jeton manquant ou invalide               |\n| `user_not_found`       | 404    | Identifiant `user_id` introuvable        |\n| `invalid_totp_code`    | 401    | Code TOTP incorrect ou expiré            |\n| `enrollment_not_found` | 404    | Aucun enrôlement trouvé pour cet ID      |\n\n---",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-auth-api-quickstart.mdx-6",
+        "text": "Étapes suivantes\n\n- Consultez les limites de débit dans la\n  [Référence API](../api-reference.md) complète.\n- Activez les codes de secours via `POST /v1/mfa/backup`.\n- Contactez le support à support@secureauth.io.",
+        "metadata": {
+            "source": "auth-api-quickstart.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/auth-api-quickstart"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-1",
+        "text": "PON – Configuration du VPN sécurisé avec AMF pour les ingénieurs de soutien L3",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-2",
+        "text": "2. Portée\n\nCette procédure s'applique aux :\n\n- Ingénieurs de soutien L3 nécessitant un accès à distance privilégié.\n- Terminaux (endpoints) gérés par l'entreprise (Windows, macOS, Linux).\n- Passerelles VPN et fournisseurs d'identité (IdP) approuvés.\n\nCette procédure exclut :\n\n- Utilisateurs non privilégiés.\n- Appareils personnels ou non gérés (AVEC/BYOD).\n- Utilisateurs sans droits d'accès approuvés.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-3",
+        "text": "4. Rôles et responsabilités\n\n| Rôle | Responsabilité |\n| : |\n| **Soutien L3** | Appliquer la procédure, gérer l'AMF et les incidents. |\n| **Cybersécurité** | Configurer le VPN, l'AMF et surveiller les journaux. |\n| **Équipe GIA** | Gérer les identités et l'enrôlement à l'AMF. |\n| **Gestion terminaux** | Assurer la conformité des appareils. |\n| **Centre services** | Fournir un soutien de niveau 1 et 2. |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-4",
+        "text": "6. Alignement de la conformité (ISO/IEC 27001:2022)\n\n| Contrôle | Description |\n|",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-5",
+        "text": "7. Prérequis\n\nAvant de commencer, assurez-vous d'avoir :\n\n- Un compte d'entreprise actif avec accès privilégié approuvé.\n- Un appareil enrôlé dans la gestion des terminaux (ex. : Intune, JAMF).\n- L'AMF configurée avec au moins deux facteurs.\n- Le client VPN approuvé installé.\n- L'URL de la passerelle VPN et les identifiants disponibles.\n- Les certificats requis installés (le cas échéant).",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-6",
+        "text": "9. Critères de vérification\n\n### Fonctionnel\n\n- État du VPN = Connecté.\n- AMF déclenchée avec succès.\n- Ressources internes accessibles.\n\n### Sécurité\n\n- Journaux enregistrés dans le SIEM.\n- AMF appliquée pour toutes les sessions.\n- Aucune tentative non autorisée détectée.\n\n### Performance\n\n- Latence < 100 ms.\n- Perte de paquets < 1 %.\n\n-|--|\n| AMF non déclenchée | Réenrôler l'AMF ou vérifier l'IdP. |\n| Échec de connexion VPN | Vérifier DNS, certificats, conformité. |\n| Échec d'authentification | Réinitialiser les identifiants ou escalader. |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-7",
+        "text": "12. Risques de sécurité\n\n- Accès non autorisé sans AMF.\n- VPN mal configuré exposant le trafic interne.\n- Tunnelage fractionné entraînant une fuite de données.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-8",
+        "text": "14. Registres et preuves\n\n| Registre | Rétention |\n|--|\n| Journaux VPN | 12 à 24 mois |\n| Journaux AMF | Selon la politique GIA |\n| Rapports de conformité | Selon la politique des terminaux |\n| Billets d'incident | Selon la politique de gestion des services |",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-9",
+        "text": "16. Historique des révisions\n\n| Version | Date | Auteur | Changements |\n|",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    },
+    {
+        "id": "fr-ca-vpn-mfa-config.mdx-10",
+        "text": "17. Annexes\n\n### Annexe A – Clients VPN approuvés\n\n- Cisco AnyConnect\n- Palo Alto GlobalProtect\n- Fortinet FortiClient\n- OpenVPN\n- WireGuard (si approuvé)\n\n### Annexe B – Méthodes AMF approuvées\n\n- Application d'authentification (TOTP ou notification)\n- Jeton matériel FIDO2\n- Carte à puce / PIV\n- Codes de récupération de secours\n\n---\n\n> **Note de conformité (Loi 96) :** Ce document a été rédigé en français\n> pour assurer la conformité aux exigences linguistiques du Québec concernant\n> les outils de travail et la documentation technique interne.",
+        "metadata": {
+            "source": "vpn-mfa-config.mdx",
+            "language": "fr-ca",
+            "url_path": "/fr-ca/vpn-mfa-config"
+        }
+    }
+]
