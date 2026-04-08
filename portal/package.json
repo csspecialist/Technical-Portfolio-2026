@@ -18,5 +18,8 @@
     "@astrojs/starlight": "^0.38.2",
     "@astrojs/vercel": "^8.0.4",
     "astro": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
