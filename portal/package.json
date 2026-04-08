@@ -19,4 +19,25 @@
     "@astrojs/vercel": "^8.0.4",
     "astro": "^6.0.1"
   }
+}{
+  "name": "portal",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.13.15",
+    "@pinecone-database/pinecone": "^7.1.0",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "^0.38.2",
+    "@astrojs/vercel": "^8.0.4",
+    "astro": "^6.0.1"
+  }
 }
