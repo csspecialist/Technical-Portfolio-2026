@@ -1,0 +1,133 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{ title: 'AI Documentation Search' }}>
+  <main class="max-w-4xl mx-auto p-8">
+    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-2 text-center">AI Knowledge Base</h1>
+      <p class="text-lg text-gray-600 mb-8 text-center">Ask a question to search through 112 bilingual technical chunks.</p>
+
+      <div class="flex flex-col md:flex-row gap-4 mb-10">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="e.g., 'How to configure MFA?' or 'Loi 25 compliance'" 
+          class="flex-1 p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-blue-500 outline-none transition-all"
+        />
+        <button id="search-btn" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-700 transition-all shadow-md">
+          Ask AI
+        </button>
+      </div>
+
+      <div id="results" class="space-y-6">
+        </div>
+    </div>
+  </main>
+</StarlightPage>
+
+<script>
+  const btn = document.getElementById('search-btn');
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsDiv = document.getElementById('results');
+
+  async function performSearch() {
+    const query = input.value.trim();
+    if (!query) return;
+
+    // Detect current locale context from the URL
+    const isFrenchRoute = window.location.pathname.includes('/fr');
+    const currentLocale = isFrenchRoute ? '/fr' : '/en';
+    
+    // Ensure searchLang matches the metadata tags in re_embed.py ('en', 'fr', or 'fr-ca')
+    const searchLang = isFrenchRoute ? 'fr-ca' : 'en';
+
+    resultsDiv!.innerHTML = `
+      <div class="flex flex-col items-center justify-center p-12">
+        <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-4"></div>
+        <p class="text-gray-500 font-medium">${isFrenchRoute ? 'Recherche en cours...' : 'Retrieving semantic matches...'}</p>
+      </div>
+    `;
+
+    try {
+      const response = await fetch('/api/search.json', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, language: searchLang })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        resultsDiv!.innerHTML = `<div class="p-4 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg">${data.error || 'Search failed'}</div>`;
+        return;
+      }
+
+      // 1. Score Threshold: Filter out low-confidence matches (hallucinations)
+      const validMatches = data.results.filter((match: any) => match.score > 0.45);
+
+      if (validMatches.length === 0) {
+        resultsDiv!.innerHTML = `<p class="text-center text-gray-500 italic">
+          ${isFrenchRoute ? 'Aucune documentation trouvée.' : 'No high-confidence documentation found.'}
+        </p>`;
+        return;
+      }
+
+      // 2. SEO FAQ Schema injection
+      const topResult = validMatches[0];
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": query,
+          "acceptedAnswer": { "@type": "Answer", "text": topResult.metadata.text }
+        }]
+      };
+      let scriptTag = document.getElementById('dynamic-schema');
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = 'dynamic-schema';
+        (scriptTag as HTMLScriptElement).type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.text = JSON.stringify(schema);
+
+      // 3. Render Results with Link Normalization
+      resultsDiv!.innerHTML = validMatches.map((match: any) => {
+        let path = match.metadata.url_path;
+
+        // Ensure leading slash for metadata path
+        if (!path.startsWith('/')) path = '/' + path;
+
+        // Construct final URL: Avoid double-prepending if metadata already has locale
+        const finalUrl = (path.startsWith('/en/') || path.startsWith('/fr/')) 
+          ? path 
+          : `${currentLocale}${path}`;
+
+        // Cleanup: Remove .md extensions or trailing slashes that cause 404s/homepage redirects
+        const cleanUrl = finalUrl.replace(/\.md$/, '').replace(/\/$/, '');
+
+        return `
+          <div class="p-6 border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md transition-all">
+            <div class="flex justify-between items-start mb-3">
+              <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                Relevance: ${Math.round(match.score * 100)}%
+              </span>
+              <a href="${cleanUrl}" class="text-sm text-blue-500 font-bold hover:underline">
+                ${isFrenchRoute ? 'Voir le document' : 'View Doc'} →
+              </a>
+            </div>
+            <p class="text-gray-800 leading-relaxed">${match.metadata.text}</p>
+          </div>
+        `;
+      }).join('');
+
+    } catch (error) {
+      resultsDiv!.innerHTML = `<p class="text-red-500 text-center">Failed to connect to search engine.</p>`;
+    }
+  }
+
+  btn?.addEventListener('click', performSearch);
+  input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+</script>

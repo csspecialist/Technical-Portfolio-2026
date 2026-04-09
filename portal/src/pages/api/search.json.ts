@@ -5,18 +5,6 @@ import { HfInference } from '@huggingface/inference';
 // Marks this endpoint as server-rendered
 export const prerender = false;
 
-// Helper to handle JSON parsing safely
-function safeParseJSON(text: string, label: string) {
-  if (!text || text.trim() === '') {
-    throw new Error(`${label} returned an empty response.`);
-  }
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error(`${label} returned invalid JSON: "${text.slice(0, 100)}..."`);
-  }
-}
-
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
@@ -26,15 +14,23 @@ export const POST: APIRoute = async ({ request }) => {
       throw new Error('Missing query or language in request body.');
     }
 
-    // 1. Initialize Pinecone
+    // 1. Securely load keys (Fallback to process.env for Vercel compatibility)
+    const pineconeKey = import.meta.env.PINECONE_API_KEY || process.env.PINECONE_API_KEY;
+    const hfKey = import.meta.env.HUGGINGFACE_API_KEY || process.env.HUGGINGFACE_API_KEY;
+
+    // Safety checks to prevent the "Invalid username or password" error
+    if (!pineconeKey) throw new Error("Pinecone API Key is missing from environment variables.");
+    if (!hfKey) throw new Error("Hugging Face API Key is missing from environment variables.");
+    if (hfKey === "undefined" || hfKey.trim() === "") throw new Error("Hugging Face API Key is being read as empty or 'undefined'.");
+
+    // 2. Initialize Pinecone
     const pc = new Pinecone({
-      apiKey: import.meta.env.PINECONE_API_KEY,
+      apiKey: pineconeKey,
     });
     const index = pc.index('bilingual-docs');
 
-    // 2. Get Query Vector from HuggingFace using the SAME model as embedding
-    // IMPORTANT: Must be the SAME model as used in re_embed.py
-    const hf = new HfInference(import.meta.env.HUGGINGFACE_API_KEY as string);
+    // 3. Initialize HuggingFace
+    const hf = new HfInference(hfKey.trim()); // .trim() removes accidental spaces
 
     const queryEmbedding = await hf.featureExtraction({
       model: 'sentence-transformers/all-MiniLM-L6-v2', // SAME as re_embed.py
@@ -53,15 +49,15 @@ export const POST: APIRoute = async ({ request }) => {
         queryVector = queryEmbedding as number[];
       }
     } else {
-      throw new Error('Unexpected embedding format');
+      throw new Error('Unexpected embedding format from Hugging Face');
     }
 
-    // 3. Query Pinecone
+    // 4. Query Pinecone
     const queryResponse = await index.query({
       vector: queryVector,
       topK: 3,
       includeMetadata: true,
-      filter: { language: { $eq: language } }
+
     });
 
     return new Response(JSON.stringify({
