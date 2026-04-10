@@ -101,7 +101,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         if (!path.startsWith('/')) path = '/' + path;
 
         // Construct final URL: Avoid double-prepending if metadata already has locale
-        const finalUrl = (path.startsWith('/en/') || path.startsWith('/fr/')) 
+        const finalUrl = (path.startsWith('/en/') || path.startsWith('/fr/') || path.startsWith('/fr-ca/')) 
           ? path 
           : `${currentLocale}${path}`;
 

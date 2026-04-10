@@ -56,7 +56,9 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
       resultsDiv!.innerHTML = validMatches.map((match: any) => {
         // LINK LOGIC: Stay on the French side of the site
         const cleanPath = match.metadata.url_path.startsWith('/') ? match.metadata.url_path : `/${match.metadata.url_path}`;
-        const finalUrl = `/fr${cleanPath}`;
+        const finalUrl = (cleanPath.startsWith('/en/') || cleanPath.startsWith('/fr/') || cleanPath.startsWith('/fr-ca/'))
+          ? cleanPath
+          : `/fr${cleanPath}`;
 
         return `
           <div class="p-6 border border-gray-100 bg-gray-50 rounded-xl">

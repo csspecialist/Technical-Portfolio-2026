@@ -142,9 +142,9 @@ print("="*60 + "\n")
 
 for i, doc in enumerate(docs, 1):
     text = doc.get('text', '').strip()
-    language = doc.get('language', 'en')
+    language = doc.get('metadata', {}).get('language', 'en')
     doc_id = doc.get('id', f"chunk_{i}")
-    url_path = doc.get('url_path', '/')
+    url_path = doc.get('metadata', {}).get('url_path', '/')
     
     if not text:
         print(f"[{i}/{len(docs)}] ⚠️  Skipped (empty text)")
