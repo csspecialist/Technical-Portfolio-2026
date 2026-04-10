@@ -26,13 +26,14 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 </StarlightPage>
 
 <script>
-  const btn = document.getElementById('search-btn');
-  const input = document.getElementById('search-input') as HTMLInputElement;
-  const resultsDiv = document.getElementById('results');
+  window.addEventListener('load', () => {
+    const btn = document.getElementById('search-btn');
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const resultsDiv = document.getElementById('results');
 
-  async function performSearch() {
-    const query = input.value.trim();
-    if (!query) return;
+    async function performSearch() {
+      const query = input.value.trim();
+      if (!query) return;
 
     resultsDiv!.innerHTML = `<p class="text-center text-gray-500">Recherche en cours...</p>`;
 
@@ -76,5 +77,6 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
   }
 
   btn?.addEventListener('click', performSearch);
-  input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+      input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+    });
 </script>

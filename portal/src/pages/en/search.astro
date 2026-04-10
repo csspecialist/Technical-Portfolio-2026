@@ -27,17 +27,18 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 </StarlightPage>
 
 <script>
-  const btn = document.getElementById('search-btn');
-  const input = document.getElementById('search-input') as HTMLInputElement;
-  const resultsDiv = document.getElementById('results');
+  window.addEventListener('load', () => {
+    const btn = document.getElementById('search-btn');
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const resultsDiv = document.getElementById('results');
 
-  async function performSearch() {
-    const query = input.value.trim();
-    if (!query) return;
+    async function performSearch() {
+      const query = input.value.trim();
+      if (!query) return;
 
-    // Detect current locale context from the URL
-    const isFrenchRoute = window.location.pathname.includes('/fr');
-    const currentLocale = isFrenchRoute ? '/fr' : '/en';
+      // Detect current locale context from the URL
+      const isFrenchRoute = typeof window !== 'undefined' && window.location.pathname.includes('/fr');
+      const currentLocale = isFrenchRoute ? '/fr' : '/en';
     
     // Ensure searchLang matches the metadata tags in re_embed.py ('en', 'fr', or 'fr-ca')
     const searchLang = isFrenchRoute ? 'fr-ca' : 'en';
