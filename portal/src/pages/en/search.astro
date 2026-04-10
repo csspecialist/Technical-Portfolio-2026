@@ -29,7 +29,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 <script is:inline>
   window.addEventListener('load', () => {
     const btn = document.getElementById('search-btn');
-    const input = document.getElementById('search-input') as HTMLInputElement;
+    const input = document.getElementById('search-input');
     const resultsDiv = document.getElementById('results');
 
     async function performSearch() {
