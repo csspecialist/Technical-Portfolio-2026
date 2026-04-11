@@ -36,11 +36,11 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
       const query = input.value.trim();
       if (!query) return;
 
-      const isFrenchRoute = typeof window !== 'undefined' && window.location.pathname.includes('/fr');
+      const isFrenchRoute = window.location.pathname.includes('/fr');
       const currentLocale = isFrenchRoute ? '/fr' : '/en';
       const searchLang = isFrenchRoute ? 'fr-ca' : 'en';
 
-      resultsDiv!.innerHTML = `
+      resultsDiv.innerHTML = `
         <div class="flex flex-col items-center justify-center p-12">
           <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-4"></div>
           <p class="text-gray-500 font-medium">${isFrenchRoute ? 'Recherche en cours...' : 'Retrieving semantic matches...'}</p>
@@ -57,14 +57,14 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         const data = await response.json();
 
         if (!response.ok) {
-          resultsDiv!.innerHTML = `<div class="p-4 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg">${data.error || 'Search failed'}</div>`;
+          resultsDiv.innerHTML = `<div class="p-4 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg">${data.error || 'Search failed'}</div>`;
           return;
         }
 
         const validMatches = data.results.filter((match) => match.score > 0.45);
 
         if (validMatches.length === 0) {
-          resultsDiv!.innerHTML = `<p class="text-center text-gray-500 italic">
+          resultsDiv.innerHTML = `<p class="text-center text-gray-500 italic">
             ${isFrenchRoute ? 'Aucune documentation trouvée.' : 'No high-confidence documentation found.'}
           </p>`;
           return;
@@ -89,7 +89,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         }
         scriptTag.text = JSON.stringify(schema);
 
-        resultsDiv!.innerHTML = validMatches.map((match: any) => {
+        resultsDiv.innerHTML = validMatches.map((match) => {
           let path = match.metadata.url_path;
           if (!path.startsWith('/')) path = '/' + path;
 
@@ -115,11 +115,11 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         }).join('');
 
       } catch (error) {
-        resultsDiv!.innerHTML = `<p class="text-red-500 text-center">Failed to connect to search engine.</p>`;
+        resultsDiv.innerHTML = `<p class="text-red-500 text-center">Failed to connect to search engine.</p>`;
       }
     }
 
-    btn?.addEventListener('click', performSearch);
-    input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+    btn.addEventListener('click', performSearch);
+    input.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
   });
 </script>

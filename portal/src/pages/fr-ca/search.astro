@@ -35,7 +35,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
       const query = input.value.trim();
       if (!query) return;
 
-      resultsDiv!.innerHTML = `<p class="text-center text-gray-500">Recherche en cours...</p>`;
+      resultsDiv.innerHTML = '<p class="text-center text-gray-500">Recherche en cours...</p>';
 
       try {
         const response = await fetch('/api/search.json', {
@@ -49,11 +49,11 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         const validMatches = data.results.filter((m) => m.score > 0.45);
 
         if (validMatches.length === 0) {
-          resultsDiv!.innerHTML = '<p class="text-center text-gray-500">Aucun résultat trouvé.</p>';
+          resultsDiv.innerHTML = '<p class="text-center text-gray-500">Aucun résultat trouvé.</p>';
           return;
         }
 
-        resultsDiv!.innerHTML = validMatches.map((match: any) => {
+        resultsDiv.innerHTML = validMatches.map((match) => {
           const cleanPath = match.metadata.url_path.startsWith('/') ? match.metadata.url_path : `/${match.metadata.url_path}`;
           const finalUrl = (cleanPath.startsWith('/en/') || cleanPath.startsWith('/fr/') || cleanPath.startsWith('/fr-ca/'))
             ? cleanPath
@@ -69,12 +69,13 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
             </div>
           `;
         }).join('');
-      } catch (error) {
-        resultsDiv!.innerHTML = '<p class="text-red-500 text-center">Erreur de connexion.</p>';
-      }
-    }  // ← this was missing
 
-    btn?.addEventListener('click', performSearch);
-    input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+      } catch (error) {
+        resultsDiv.innerHTML = '<p class="text-red-500 text-center">Erreur de connexion.</p>';
+      }
+    }
+
+    btn.addEventListener('click', performSearch);
+    input.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
   });
 </script>
