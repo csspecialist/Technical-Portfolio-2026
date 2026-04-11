@@ -61,7 +61,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
           return;
         }
 
-        const validMatches = data.results.filter((match: any) => match.score > 0.45);
+        const validMatches = data.results.filter((match) => match.score > 0.45);
 
         if (validMatches.length === 0) {
           resultsDiv!.innerHTML = `<p class="text-center text-gray-500 italic">
@@ -84,7 +84,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
         if (!scriptTag) {
           scriptTag = document.createElement('script');
           scriptTag.id = 'dynamic-schema';
-          (scriptTag as HTMLScriptElement).type = 'application/ld+json';
+          scriptTag.type = 'application/ld+json';
           document.head.appendChild(scriptTag);
         }
         scriptTag.text = JSON.stringify(schema);

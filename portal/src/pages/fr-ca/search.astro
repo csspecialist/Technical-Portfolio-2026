@@ -46,7 +46,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
         const data = await response.json();
 
-        const validMatches = data.results.filter((m: any) => m.score > 0.45);
+        const validMatches = data.results.filter((m) => m.score > 0.45);
 
         if (validMatches.length === 0) {
           resultsDiv!.innerHTML = '<p class="text-center text-gray-500">Aucun résultat trouvé.</p>';
