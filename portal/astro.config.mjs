@@ -14,7 +14,6 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Technical Documentation Lab',
-      // Set English as the default language
       defaultLocale: 'en',
       locales: {
         en: {
@@ -81,4 +80,12 @@ export default defineConfig({
       ],
     }),
   ],
+  vite: {
+    ssr: {
+      noExternal: ['@astrojs/starlight'],
+    },
+    optimizeDeps: {
+      exclude: ['@astrojs/starlight'],
+    },
+  },
 });
