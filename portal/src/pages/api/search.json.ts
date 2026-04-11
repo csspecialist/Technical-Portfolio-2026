@@ -67,7 +67,7 @@ export const POST: APIRoute = async ({ request }) => {
       headers: { 'Content-Type': 'application/json' }
     });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error("API Error:", error.message);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
