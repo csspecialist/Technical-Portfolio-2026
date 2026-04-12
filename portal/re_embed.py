@@ -1,5 +1,8 @@
 import json
+import os
 import time
+
+from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from pinecone import Pinecone
 import numpy as np
@@ -7,9 +10,18 @@ import numpy as np
 # ==========================================
 # 1. Configuration & API Keys
 # ==========================================
-PINECONE_API_KEY = ""
-HUGGINGFACE_API_KEY = ""
+load_dotenv()  # Loads from .env locally; no-ops in CI where real env vars exist
+
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+HF_TOKEN = os.environ.get("HF_TOKEN")
 INDEX_NAME = "bilingual-docs"
+
+if not PINECONE_API_KEY or not HF_TOKEN:
+    raise EnvironmentError(
+        "Missing required API keys. "
+        "Set PINECONE_API_KEY and HF_TOKEN as environment variables. "
+        "For local testing, create a .env file (never commit it)."
+    )
 
 # Language-specific models
 LANGUAGE_MODELS = {
@@ -22,7 +34,7 @@ LANGUAGE_MODELS = {
 # 2. Initialize HuggingFace and Pinecone
 # ==========================================
 try:
-    hf_client = InferenceClient(api_key=HUGGINGFACE_API_KEY)
+    hf_client = InferenceClient(api_key=HF_TOKEN)
     print("✓ Connected to HuggingFace Inference API")
 except Exception as e:
     print(f"❌ Error connecting to HuggingFace: {e}")
@@ -207,3 +219,4 @@ else:
     print("  2. Embedding API failed")
     print("  3. Invalid knowledge_base.json format")
     print(f"{'='*60}\n")
+    

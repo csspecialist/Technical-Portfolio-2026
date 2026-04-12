@@ -1,0 +1,32 @@
+name: AI Knowledge Base Update
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/content/docs/**'
+
+jobs:
+  update-search-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt   # ← updated line
+
+      - name: Run Ingestion (Markdown to JSON)
+        run: python ingest.py
+
+      - name: Run Embedding (JSON to Pinecone)
+        env:
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python re_embed.py
+        
