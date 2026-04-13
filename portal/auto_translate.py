@@ -1,7 +1,9 @@
 import os
 import time
+from datetime import date
 
 from dotenv import load_dotenv
+import frontmatter
 import google.generativeai as genai
 
 # ==========================================
@@ -50,16 +52,35 @@ def translate_markdown(content, target_language):
         return None
 
 # ==========================================
-# 3. Pipeline Execution
+# 3. Save with Provenance Metadata
 # ==========================================
-print(f"🚀 Starting Auto-Translation Pipeline...")
+def save_translated_file(original_path, target_path, translated_body, lang_name):
+    # 1. Load the original file to get its frontmatter (title, etc.)
+    with open(original_path, 'r', encoding='utf-8') as f:
+        post = frontmatter.load(f)
+
+    # 2. Keep the original metadata but update it for the AI layer
+    post.content = translated_body
+    post.metadata['translated_by'] = "gemini-2.5-flash"
+    post.metadata['verification_status'] = "unverified"
+    post.metadata['translation_date'] = str(date.today())  # Always reflects actual run date
+
+    # 3. Save the new file with perfect YAML formatting
+    with open(target_path, 'w', encoding='utf-8') as f:
+        f.write(frontmatter.dumps(post))
+    print(f"✅ Saved & Tagged: {target_path}")
+
+# ==========================================
+# 4. Pipeline Execution
+# ==========================================
+print("🚀 Starting Auto-Translation Pipeline...")
 
 # Walk through all English files
 for root, dirs, files in os.walk(BASE_EN_DIR):
     for file in files:
         if file.endswith((".md", ".mdx")):
             en_file_path = os.path.join(root, file)
-            
+
             # Read the English content
             with open(en_file_path, 'r', encoding='utf-8') as f:
                 en_content = f.read()
@@ -75,11 +96,9 @@ for root, dirs, files in os.walk(BASE_EN_DIR):
                 if not os.path.exists(target_file_path):
                     print(f"🔄 Translating {file} to {lang_name}...")
                     translated_text = translate_markdown(en_content, lang_name)
-                    
+
                     if translated_text:
-                        with open(target_file_path, 'w', encoding='utf-8') as f:
-                            f.write(translated_text)
-                        print(f"✅ Saved: {target_file_path}")
+                        save_translated_file(en_file_path, target_file_path, translated_text, lang_name)
                         time.sleep(1)  # Avoid hitting API rate limits
                 else:
                     print(f"⏭️  Skipped (Already exists): {target_file_path}")

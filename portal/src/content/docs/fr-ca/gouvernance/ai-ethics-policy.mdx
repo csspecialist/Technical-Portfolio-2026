@@ -1,0 +1,38 @@
+---
+description: Governance framework for AI-augmented documentation systems.
+sidebar:
+  order: 1
+title: AI Acceptable Use & Ethics Policy
+translated_by: gemini-2.5-flash
+translation_date: '2026-04-13'
+verification_status: unverified
+---
+
+---
+title: Politique d'utilisation acceptable et d'éthique de l'IA
+description: Cadre de gouvernance pour les systèmes de documentation augmentés par l'IA.
+lang: fr-ca
+sidebar:
+  order: 1
+---
+
+# Politique d'utilisation acceptable et d'éthique de l'IA (Conforme à l'ISO 42001)
+
+## 1. Portée
+Cette politique régit l'utilisation de l'IA générative (Gemini 2.5 Flash) au sein de notre pipeline de documentation, plus particulièrement en ce qui concerne la traduction automatisée et la génération augmentée par récupération (RAG).
+
+## 2. Transparence de l'IA (Traçabilité)
+Tout contenu généré ou traduit par l'IA doit être clairement identifié. 
+- **Exigence de métadonnées :** Chaque fichier généré par l'IA doit contenir les balises `translated_by` et `verification_status` dans le frontmatter.
+- **Divulgation à l'utilisateur :** Les pages publiques doivent afficher un avertissement si un humain n'a pas encore vérifié le contenu.
+
+## 3. Exigence de l'intervention humaine (HITL)
+L'IA est un « copilote », pas un auteur.
+- **Vérification :** Les traductions automatisées pour le contenu « à haut risque » (par exemple, Protocoles de sécurité, API Keys, Conformité légale) nécessitent une révision manuelle obligatoire par un expert bilingue en la matière avant que le `verification_status` ne soit modifié à `verified`.
+
+## 4. Confidentialité et sécurité des données
+- **Pas de PII :** Aucune information personnellement identifiable (PII) ne doit être envoyée aux API d'IA externes (Google AI Studio/OpenAI).
+- **Gestion des identifiants :** Les API keys ne doivent jamais être stockées dans la base de code. Toutes les clés sont gérées via les secrets GitHub.
+
+## 5. Surveillance continue
+Notre pipeline GitHub Actions enregistre chaque interaction d'IA. Ces journaux servent de « Piste d'audit » requise pour la certification ISO 42001.

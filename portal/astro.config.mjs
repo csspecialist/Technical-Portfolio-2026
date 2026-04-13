@@ -29,6 +29,11 @@ export default defineConfig({
           lang: 'fr-CA',
         },
       },
+      // Override Starlight's ContentPanel to inject the AI warning banner
+      // automatically on any page where verification_status: unverified
+      components: {
+        ContentPanel: './src/components/ContentPanel.astro',
+      },
       social: [
         { 
           icon: 'github', 

@@ -1,0 +1,38 @@
+---
+title: Cybersecurity Security Statement
+description: Security posture and data protection protocols for the AI-integrated documentation portal.
+sidebar:
+  order: 2
+---
+
+# Cybersecurity Security Statement
+**Version:** 1.0  
+**Status:** Active (ISO 27001 Aligned)
+
+## 1. System Architecture Security
+Our documentation portal follows the **JAMstack** philosophy, significantly reducing the attack surface compared to traditional database-driven CMS platforms.
+
+* **Static Generation:** The front-end is pre-rendered as static HTML. There is no live application server or SQL database exposed to the public internet, mitigating SQL Injection and Cross-Site Scripting (XSS) risks.
+* **Edge Deployment:** Assets are served via a Global Content Delivery Network (CDN) with built-in DDoS protection and SSL/TLS encryption in transit.
+
+## 2. AI & Data Privacy (Data in Transit)
+To power our semantic search and auto-translation features, we utilize external AI APIs (Google AI Studio and Pinecone). 
+
+* **Data Minimization:** No Personally Identifiable Information (PII) or proprietary internal credentials are ever included in the Markdown source files or sent to AI processing endpoints.
+* **Transport Security:** All communication with Google AI Studio and Pinecone is conducted over encrypted **HTTPS (TLS 1.2+)** connections.
+* **Vector Database Security:** Our Pinecone index is protected by API-key-based authentication. Metadata stored in the vector database is limited to public-facing documentation snippets and URLs.
+
+## 3. Secret Management & CI/CD Security
+Following **ISO 27001** best practices, we treat our automation pipeline as a secure environment.
+
+* **GitHub Secrets:** Sensitive credentials, including `PINECONE_API_KEY`, `HUGGINGFACE_API_KEY`, and `GOOGLE_API_KEY`, are **never** hardcoded in the source code. They are stored in GitHub’s encrypted secret vault.
+* **Least Privilege:** GitHub Actions are configured with minimal required permissions (`contents: write` only for automated commits).
+* **Audit Trails:** Every change to the documentation or the AI pipeline is version-controlled via Git, providing a permanent audit trail.
+
+## 4. Access Control (IAM)
+* **Administrative Access:** Access to the production repository and API dashboards is restricted via Multi-Factor Authentication (MFA).
+* **Deployment Protection:** Direct pushes to the `main` branch are restricted via branch protection rules, requiring pull request reviews for all documentation updates.
+
+## 5. Vulnerability Management
+* **Dependency Scanning:** We utilize automated tools (e.g., GitHub Dependabot) to monitor and patch vulnerabilities in our Python and Node.js dependencies.
+* **Static Analysis:** The `ingest.py` and `re_embed.py` scripts are regularly audited for insecure coding practices.

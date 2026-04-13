@@ -1,0 +1,29 @@
+---
+title: AI Acceptable Use & Ethics Policy
+description: Governance framework for AI-augmented documentation systems.
+sidebar:
+  order: 1
+---
+
+# AI Acceptable Use & Ethics Policy (ISO 42001 Aligned)
+
+## 1. Scope
+This policy governs the use of Generative AI (Gemini 2.5 Flash) within our documentation pipeline, specifically regarding automated translation and retrieval-augmented generation (RAG).
+
+## 2. AI Transparency (Traceability)
+All content generated or translated by AI must be clearly identified. 
+- **Metadata Requirement:** Every AI-generated file must contain the `translated_by` and `verification_status` tags in the frontmatter.
+- **User Disclosure:** Public-facing pages must display a disclaimer if a human has not yet verified the content.
+
+
+
+## 3. Human-in-the-Loop (HITL) Requirement
+AI is a "co-pilot," not an author.
+- **Verification:** Automated translations for "High-Risk" content (e.g., Security Protocols, API Keys, Legal Compliance) require a mandatory manual review by a bilingual subject matter expert before the `verification_status` is changed to `verified`.
+
+## 4. Data Privacy & Security
+- **No PII:** No Personally Identifiable Information (PII) shall be sent to external AI APIs (Google AI Studio/OpenAI).
+- **Credential Management:** API keys must never be stored in the codebase. All keys are managed via GitHub Secrets.
+
+## 5. Continuous Monitoring
+Our GitHub Actions pipeline logs every AI interaction. These logs serve as the "Audit Trail" required for ISO 42001 certification.

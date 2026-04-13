@@ -1,0 +1,37 @@
+---
+description: Governance framework for AI-augmented documentation systems.
+sidebar:
+  order: 1
+title: AI Acceptable Use & Ethics Policy
+translated_by: gemini-2.5-flash
+translation_date: '2026-04-13'
+verification_status: unverified
+---
+
+---
+title: Politique d'utilisation acceptable et d'éthique de l'IA
+description: Cadre de gouvernance pour les systèmes de documentation augmentés par l'IA.
+sidebar:
+  order: 1
+---
+
+# Politique d'utilisation acceptable et d'éthique de l'IA (Conforme ISO 42001)
+
+## 1. Portée
+Cette politique régit l'utilisation de l'IA Générative (Gemini 2.5 Flash) au sein de notre pipeline de documentation, plus particulièrement en ce qui concerne la traduction automatisée et la génération augmentée par récupération (RAG).
+
+## 2. Transparence de l'IA (Traçabilité)
+Tout contenu généré ou traduit par l'IA doit être clairement identifié.
+- **Exigence de Métadonnées :** Chaque fichier généré par l'IA doit contenir les balises `translated_by` et `verification_status` dans le frontmatter.
+- **Divulgation à l'Utilisateur :** Les pages accessibles au public doivent afficher une clause de non-responsabilité si le contenu n'a pas encore été vérifié par un humain.
+
+## 3. Exigence de l'Intervention Humaine (HITL)
+L'IA est un "copilote", pas un auteur.
+- **Vérification :** Les traductions automatisées de contenu "à haut risque" (par exemple, Protocoles de Sécurité, Clés API, Conformité Légale) exigent une révision manuelle obligatoire par un expert bilingue en la matière avant que le statut `verification_status` ne soit modifié en `verified`.
+
+## 4. Confidentialité et Sécurité des Données
+- **Pas de PII :** Aucune Information d'Identification Personnelle (PII) ne doit être envoyée aux API d'IA externes (Google AI Studio/OpenAI).
+- **Gestion des Identifiants :** Les clés API ne doivent jamais être stockées dans le codebase. Toutes les clés sont gérées via GitHub Secrets.
+
+## 5. Surveillance Continue
+Notre pipeline GitHub Actions enregistre chaque interaction de l'IA. Ces journaux servent de "Piste d'Audit" requise pour la certification ISO 42001.
