@@ -11,4 +11,4 @@ jobs:
       - name: Run Markdown Lint
         uses: DavidAnson/markdownlint-cli2-action@v1
         with:
-          globs: "**/*.md"
+          globs: "**/*.md,**/*.mdx"

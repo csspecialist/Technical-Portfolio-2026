@@ -19,7 +19,12 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt   # ← updated line
+        run: pip install -r requirements.txt
+
+      - name: Run Auto-Translation        # ← new step, runs first
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python auto_translate.py
 
       - name: Run Ingestion (Markdown to JSON)
         run: python ingest.py
