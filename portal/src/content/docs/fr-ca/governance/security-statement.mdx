@@ -1,0 +1,49 @@
+---
+description: Security posture and data protection protocols for the AI-integrated
+  documentation portal.
+sidebar:
+  order: 2
+title: Cybersecurity Security Statement
+translated_by: gemini-2.5-flash
+translation_date: '2026-04-14'
+verification_status: unverified
+---
+
+---
+title: "Déclaration de Sécurité Cybernétique"
+description: Posture de sécurité et protocoles de protection des données pour le portail de documentation intégré à l'IA.
+sidebar:
+  order: 2
+---
+
+## Déclaration de Sécurité Cybernétique
+**Version :** 1.0  
+**Statut :** Actif (Conforme à ISO 27001)
+
+## 1. Sécurité de l'Architecture Système
+Notre portail de documentation suit la philosophie **JAMstack**, ce qui réduit significativement la surface d'attaque par rapport aux plateformes CMS traditionnelles basées sur des bases de données.
+
+*   **Génération Statique :** L'interface utilisateur est pré-rendue sous forme de HTML statique. Il n'y a pas de serveur d'applications en direct ni de base de données SQL exposés à l'internet public, ce qui atténue les risques de `SQL Injection` et de `Cross-Site Scripting (XSS)`.
+*   **Déploiement en Bordure :** Les actifs sont servis via un réseau de diffusion de contenu (CDN) mondial avec protection `DDoS` intégrée et chiffrement `SSL/TLS` en transit.
+
+## 2. IA et Confidentialité des Données (Données en Transit)
+Pour alimenter nos fonctionnalités de recherche sémantique et de traduction automatique, nous utilisons des API d'IA externes (Google AI Studio et Pinecone).
+
+*   **Minimisation des Données :** Aucune information personnellement identifiable (`PII`) ou identifiant interne propriétaire n'est jamais incluse dans les fichiers sources Markdown ni envoyée aux points de terminaison de traitement de l'IA.
+*   **Sécurité du Transport :** Toutes les communications avec Google AI Studio et Pinecone sont effectuées via des connexions chiffrées **HTTPS (TLS 1.2+)**.
+*   **Sécurité de la Base de Données Vectorielle :** Notre index Pinecone est protégé par une authentification basée sur des clés API. Les métadonnées stockées dans la base de données vectorielle sont limitées aux extraits de documentation accessibles au public et aux URL.
+
+## 3. Gestion des Secrets et Sécurité CI/CD
+Conformément aux meilleures pratiques **ISO 27001**, nous traitons notre pipeline d'automatisation comme un environnement sécurisé.
+
+*   **Secrets GitHub :** Les informations d'identification sensibles, y compris `PINECONE_API_KEY`, `HUGGINGFACE_API_KEY`, et `GOOGLE_API_KEY`, ne sont **jamais** codées en dur dans le code source. Elles sont stockées dans le coffre-fort de secrets chiffré de GitHub.
+*   **Moindre Privilège :** Les actions GitHub sont configurées avec les permissions minimales requises (`contents: write` uniquement pour les commits automatisés).
+*   **Pistes d'Audit :** Chaque modification apportée à la documentation ou au pipeline d'IA est gérée par un contrôle de version via Git, offrant une piste d'audit permanente.
+
+## 4. Contrôle d'Accès (IAM)
+*   **Accès Administratif :** L'accès au dépôt de production et aux tableaux de bord API est restreint via l'authentification multifacteur (`Multi-Factor Authentication (MFA)`).
+*   **Protection du Déploiement :** Les envois directs à la branche `main` sont restreints via des règles de protection de branche, exigeant des révisions de pull request pour toutes les mises à jour de documentation.
+
+## 5. Gestion des Vulnérabilités
+*   **Analyse des Dépendances :** Nous utilisons des outils automatisés (par exemple, GitHub Dependabot) pour surveiller et corriger les vulnérabilités dans nos dépendances Python et Node.js.
+*   **Analyse Statique :** Les scripts `ingest.py` et `re_embed.py` sont régulièrement audités pour détecter les pratiques de codage non sécurisées.

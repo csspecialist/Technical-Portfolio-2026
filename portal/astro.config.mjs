@@ -29,11 +29,6 @@ export default defineConfig({
           lang: 'fr-CA',
         },
       },
-      // Override Starlight's ContentPanel to inject the AI warning banner
-      // automatically on any page where verification_status: unverified
-      components: {
-        ContentPanel: './src/components/ContentPanel.astro',
-      },
       social: [
         { 
           icon: 'github', 
@@ -43,44 +38,129 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Getting Started',
+          label: 'API Monetization',
           translations: {
-            fr: 'Premiers pas',
-            'fr-CA': 'Premiers pas',
+            fr: 'Monétisation des API',
+            'fr-CA': 'Monétisation des API',
           },
-          link: 'guides/auth-api-quickstart/', 
+          items: [
+            {
+              label: 'API Monetization Guide',
+              link: '/api-monetization/api-monetization-guide/',
+              translations: {
+                fr: 'Guide de monétisation des API',
+                'fr-CA': 'Guide de monétisation des API',
+              },
+            },
+            {
+              label: 'Entitlement Management API',
+              link: '/api-monetization/entitlement-management-api/',
+              translations: {
+                fr: 'API de gestion des droits',
+                'fr-CA': 'API de gestion des droits',
+              },
+            },
+            {
+              label: 'Usage-Based Billing',
+              link: '/api-monetization/usage-based-billing/',
+              translations: {
+                fr: 'Facturation à l\'usage',
+                'fr-CA': 'Facturation à l\'usage',
+              },
+            },
+            {
+              label: 'Usage Tracking Architecture',
+              link: '/api-monetization/usage-tracking-architecture/',
+              translations: {
+                fr: 'Architecture de suivi d\'utilisation',
+                'fr-CA': 'Architecture de suivi d\'utilisation',
+              },
+            },
+          ],
         },
         {
-          label: 'Governance & Compliance',
+          label: 'API & Developer Guides',
           translations: {
-            fr: 'Gouvernance et conformité',
-            'fr-CA': 'Gouvernance et conformité',
+            fr: 'API et guides développeur',
+            'fr-CA': 'API et guides développeur',
           },
-          autogenerate: { directory: 'compliance' },
+          items: [
+            {
+              label: 'Auth API Quickstart',
+              link: '/guides/auth-api-quickstart/',
+              translations: {
+                fr: 'Démarrage rapide API d\'authentification',
+                'fr-CA': 'Démarrage rapide API d\'authentification',
+              },
+            },
+          ],
         },
         {
-          label: 'Core Guides',
+          label: 'Governance',
           translations: {
-            fr: 'Guides essentiels',
-            'fr-CA': 'Guides essentiels',
+            fr: 'Gouvernance',
+            'fr-CA': 'Gouvernance',
           },
-          autogenerate: { directory: 'guides' },
+          items: [
+            {
+              label: 'AI Ethics Policy',
+              link: '/governance/ai-ethics-policy/',
+              translations: {
+                fr: 'Politique d\'éthique IA',
+                'fr-CA': 'Politique d\'éthique IA',
+              },
+            },
+            {
+              label: 'Security Statement',
+              link: '/governance/security-statement/',
+              translations: {
+                fr: 'Déclaration de sécurité',
+                'fr-CA': 'Déclaration de sécurité',
+              },
+            },
+          ],
         },
         {
-          label: 'Standard Operating Procedures',
+          label: 'Compliance',
           translations: {
-            fr: 'Modes opératoires',
-            'fr-CA': 'Procédures opérationnelles normalisées',
+            fr: 'Conformité',
+            'fr-CA': 'Conformité',
           },
-          autogenerate: { directory: 'sops' },
+          items: [
+            {
+              label: 'Data Privacy',
+              link: '/compliance/data-privacy/',
+              translations: {
+                fr: 'Confidentialité des données',
+                'fr-CA': 'Confidentialité des données',
+              },
+            },
+            {
+              label: 'Enterprise Security Hub',
+              link: '/compliance/enterprise-security-hub/',
+              translations: {
+                fr: 'Centre de sécurité entreprise',
+                'fr-CA': 'Centre de sécurité entreprise',
+              },
+            },
+          ],
         },
         {
-          label: 'System Architecture',
+          label: 'Operations & SOPs',
           translations: {
-            fr: 'Architecture système',
-            'fr-CA': 'Architecture système',
+            fr: 'Opérations et procédures',
+            'fr-CA': 'Procédures opérationnelles',
           },
-          autogenerate: { directory: 'architecture' },
+          items: [
+            {
+              label: 'VPN MFA Configuration',
+              link: '/operations/vpn-mfa-config/',
+              translations: {
+                fr: 'Configuration VPN MFA',
+                'fr-CA': 'Configuration VPN AMF',
+              },
+            },
+          ],
         },
       ],
     }),
