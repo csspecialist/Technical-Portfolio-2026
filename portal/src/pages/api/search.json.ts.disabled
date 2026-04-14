@@ -2,9 +2,6 @@ import type { APIRoute } from 'astro';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { HfInference } from '@huggingface/inference';
 
-// Marks this endpoint as server-rendered
-export const prerender = false;
-
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();

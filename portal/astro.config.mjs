@@ -1,16 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import vercel from '@astrojs/vercel';
-import { loadEnv } from "vite";
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
+   redirects: {
     '/': '/en/',
   },
-  output: 'server',
-  adapter: vercel(),
+
   integrations: [
     starlight({
       title: 'Technical Documentation Lab',
@@ -165,12 +162,4 @@ export default defineConfig({
       ],
     }),
   ],
-  vite: {
-    ssr: {
-      noExternal: ['@astrojs/starlight'],
-    },
-    optimizeDeps: {
-      exclude: ['@astrojs/starlight'],
-    },
-  },
 });
