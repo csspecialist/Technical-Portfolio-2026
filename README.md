@@ -1,8 +1,51 @@
+---
 # Technical-Portfolio-2026
 
 Bilingual Technical Documentation & AI-Augmented Workflows
 built with **Astro + Starlight**.
 
+---
+
+## 🚀 The Big Picture: My Smart Book in Two Languages
+
+This is a very fast website that helps people read about technology in both **English** and **French**. It uses a "computer brain" to help me write and keep everything safe.
+
+### 🌟 4 Cool Things About This Site:
+* **Smart Translation:** A computer brain called **Gemini 2.5** helps me change my English writing into French writing automatically.
+* **Super Fast Search:** I use a tool called **Pagefind**. It helps you find any word on the site instantly, like magic!
+* **Safety Rules:** We have special rules (called **ISO rules**) to make sure the computer is being fair and keeping your information safe.
+* **The Store (API):** I added a special section that explains how we can charge money for people to use our smart tools.
+
+### 🗺️ How It All Works (System Map)
+
+```mermaid
+graph TD
+    subgraph "1. Writing the Pages"
+        A[Write in English] -->|Computer Brain| B[French Pages]
+        B -->|Save| C(GitHub Storage)
+    end
+
+    subgraph "2. Making it Fast"
+        D[Gemini 2.5 Brain] -->|Help Translate| B
+        C --> E{Build the Website}
+    end
+
+    subgraph "3. Showing the Website"
+        E --> F[Astro Website]
+        F --> G[Fast Search Bar]
+        F --> H[Google SEO Tags]
+    end
+
+    subgraph "4. Rules and Business"
+        I[Safety Rules - ISO] --- F
+        J[How we make money - API] --- F
+    end
+
+    style D fill:#f96,stroke:#333,stroke-width:2px
+    style G fill:#69f,stroke:#fff,stroke-width:2px,color:#fff
+    style J fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style I fill:#eee,stroke:#333,stroke-dasharray: 5 5
+```
 ---
 
 ## 📁 Standard Operating Procedures (SOPs)
@@ -20,10 +63,13 @@ following a "Docs-as-Code" methodology.
 
 ## 🛠️ Tech Stack & Validation
 
-- **Framework**: [Astro Starlight](https://technical-portfolio-woad.vercel.app/) (Documentation Engine).
+- **Framework**: [Astro Starlight](https://docs.afreelancetranslator.com/) (Documentation Engine).
 - **Architecture**: Internationalization (i18n) with strict locale routing (`en`, `fr`, `fr-ca`).
 - **Markdown**: Advanced frontmatter for automated sidebar generation.
+- **AI & Search**: Gemini 2.5 (Translation) and Pagefind WASM (Instant Search).
 - **Standards**: ISO 27001, OQLF (Loi 96) & RGPD (ANSSI).
+
+---
 
 ## ⌨️ Developer Resources (Guides)
 
@@ -32,9 +78,12 @@ following a "Docs-as-Code" methodology.
 | **API Quickstart** | 🇺🇸 EN | REST API | [View Source](./portal/src/content/docs/en/guides/auth-api-quickstart.mdx) |
 | **Guide API** | 🇫🇷 FR | REST API | [View Source](./portal/src/content/docs/fr/guides/auth-api-quickstart.mdx) |
 
+---
+
 ## ⚖️ Governance & Compliance
 
 | Document | Language | Standards | Repo Link |
 | :--- | :--- | :--- | :--- |
 | **Data Privacy Policy** | 🇺🇸 EN | ISO 27001, GDPR | [View Source](./portal/src/content/docs/en/compliance/data-privacy.mdx) |
 | **Politique de Confidentialité** | 🇫🇷 FR | ISO 27001, RGPD | [View Source](./portal/src/content/docs/fr/compliance/data-privacy.mdx) |
+
