@@ -42,7 +42,6 @@ graph TD
 
     style D fill:#f96,stroke:#333,stroke-width:2px
     style G fill:#69f,stroke:#fff,stroke-width:2px,color:#fff
-    style J fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
     style I fill:#eee,stroke:#333
 ```
 
