@@ -38,7 +38,6 @@ graph TD
 
     subgraph Rules_Business
         I[Safety Rules<br>ISO] --> F
-        J[How we make money<br>API] --> F
     end
 
     style D fill:#f96,stroke:#333,stroke-width:2px
