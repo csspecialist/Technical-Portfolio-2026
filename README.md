@@ -62,7 +62,7 @@ following a "Docs-as-Code" methodology.
 
 ## 🛠️ Tech Stack & Validation
 
-- **Framework**: [Astro Starlight](https://technical-portfolio-woad.vercel.app/) (Documentation Engine).
+- **Framework**: [Astro Starlight](https://docs.afreelancetranslator.com/) (Documentation Engine).
 - **Architecture**: Internationalization (i18n) with strict locale routing (`en`, `fr`, `fr-ca`).
 - **Markdown**: Advanced frontmatter for automated sidebar generation.
 - **AI & Search**: Gemini 2.5 (Translation) and Pagefind WASM (Instant Search).
