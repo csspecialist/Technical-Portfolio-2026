@@ -1,139 +1,226 @@
 ---
-title: "Guide de démarrage rapide : API SecureAuth"
-description: Un guide de 5 minutes pour authentifier votre premier appel API via OAuth 2.0.
+title: "Démarrage rapide API Auth : authentifiez votre première requête en 5 minutes"
+description: "Apprenez à authentifier votre première requête API avec OAuth 2.0. Ce guide aide les développeurs à démarrer rapidement tout en comprenant l’usage, les limites et l’accès à l’API."
+
+type: "HowTo"
+version: "1.0.0"
+status: "published"
+date: "2026-04-13"
+author: "Maliki K."
+
+category: "Onboarding API"
+complexity: "Débutant"
+
+tags: ["authentification api", "oauth 2.0", "onboarding api", "expérience développeur", "monétisation api"]
+
 sidebar:
-  label: "Démarrage rapide API"
-  order: 2
-# Métadonnées pour l'IA et l'Expérience Développeur (DX)
-category: Developer Experience
-complexity: Intermédiaire
-duration: 5 min
-tags: [API, Authentification, Sécurité, Quickstart, OAuth2]
-lastUpdated: true
+  label: "Démarrage rapide Auth API"
+  order: 1
 ---
 
-## SecureAuth — Guide de démarrage rapide
+## Ce que vous allez apprendre
 
-Configurez l'enrôlement et la vérification AMF en quelques minutes.
+Dans ce guide, vous allez :
 
-## Prérequis
+* authentifier votre première requête API avec OAuth 2.0
+* comprendre comment l’accès à l’API est contrôlé
+* voir comment l’authentification est liée au suivi d’usage et à la facturation
 
-- Un compte SecureAuth actif
-- Votre jeton d'accès (Bearer Token), émis depuis le tableau de bord
-  développeur
-- Une application d'authentification compatible TOTP (ex. : Google
-  Authenticator, Authy)
-
-## Authentification
-
-Chaque requête doit inclure un en-tête `Authorization` contenant votre
-jeton d'accès.
-
-```http
-Authorization: Bearer <VOTRE_JETON>
-```
-
-## Points de terminaison
-
-### POST /v1/mfa/enroll
-
-Enrôle un utilisateur dans l'authentification multifacteur (AMF) TOTP.
-
-#### Requête d'enrôlement
-
-```http
-POST /v1/mfa/enroll HTTP/1.1
-Host: api.secureauth.io
-Authorization: Bearer <VOTRE_JETON>
-Content-Type: application/json
-
-{
-  "user_id": "usr_01HXYZ",
-  "method": "totp"
-}
-```
-
-#### Réponse d'enrôlement — 200 OK
-
-```json
-{
-  "enrollment_id": "enr_09ABCD",
-  "totp_uri": "otpauth://totp/SecureAuth:usr_01HXYZ?secret=SECRET32",
-  "qr_code_url": "https://api.secureauth.io/qr/enr_09ABCD.png"
-}
-```
-
-#### Champs de la réponse d'enrôlement
-
-| Champ           | Type   | Description                              |
-|-----------------|--------|------------------------------------------|
-| `enrollment_id` | string | Identifiant unique de cet enrôlement     |
-| `totp_uri`      | string | URI OTP Auth pour les apps d'authentif.  |
-| `qr_code_url`   | string | URL vers l'image du code QR à scanner    |
+→ Voir : [Guide de monétisation API](/fr/api-monetization/api-monetization-guide)
 
 ---
 
-### POST /v1/mfa/verify
+## Avant de commencer
 
-Vérifie un code TOTP soumis par l'utilisateur.
+Assurez-vous d’avoir :
 
-#### Requête de vérification
-
-```http
-POST /v1/mfa/verify HTTP/1.1
-Host: api.secureauth.io
-Authorization: Bearer <VOTRE_JETON>
-Content-Type: application/json
-
-{
-  "enrollment_id": "enr_09ABCD",
-  "totp_code": "123456"
-}
-```
-
-#### Réponse de vérification — 200 OK
-
-```json
-{
-  "verified": true,
-  "session_token": "sess_XYZ789..."
-}
-```
-
-#### Réponse de vérification — 401 Non autorisé
-
-```json
-{
-  "verified": false,
-  "error": "invalid_totp_code"
-}
-```
-
-#### Champs de la réponse de vérification
-
-| Champ           | Type    | Description                             |
-|-----------------|---------|-----------------------------------------|
-| `enrollment_id` | string  | Identifiant retourné à l'enrôlement     |
-| `totp_code`     | string  | Code à 6 chiffres de votre application  |
-| `verified`      | boolean | `true` si la vérification a réussi      |
-| `session_token` | string  | Jeton de session émis en cas de succès  |
+* une clé API ou des identifiants client
+* un accès au tableau de bord API
+* un outil comme curl ou Postman
 
 ---
 
-## Codes d'erreur
+## Étape 1 : Obtenir vos identifiants API
 
-| Code                   | Statut | Description                              |
-|------------------------|--------|------------------------------------------|
-| `invalid_token`        | 401    | Jeton manquant ou invalide               |
-| `user_not_found`       | 404    | Identifiant `user_id` introuvable        |
-| `invalid_totp_code`    | 401    | Code TOTP incorrect ou expiré            |
-| `enrollment_not_found` | 404    | Aucun enrôlement trouvé pour cet ID      |
+Depuis votre tableau de bord, créez :
+
+* Client ID
+* Client Secret
+
+Ces identifiants permettent d’identifier votre application et de contrôler l’accès.
+
+L’accès est souvent lié à un **plan ou abonnement**.
+
+→ Voir : [Gestion des droits (Entitlements)](/fr/api-monetization/entitlement-management-api)
 
 ---
 
-## Étapes suivantes
+## Étape 2 : Demander un token d’accès
 
-- Consultez les limites de débit dans la
-  [Référence API](../api-reference.md) complète.
-- Activez les codes de secours via `POST /v1/mfa/backup`.
-- Contactez le support à support@secureauth.io.
+Utilisez OAuth 2.0 pour obtenir un token :
+
+```bash id="f3l2xv"
+curl -X POST https://api.votreservice.com/oauth/token \
+  -d "client_id=YOUR_CLIENT_ID" \
+  -d "client_secret=YOUR_CLIENT_SECRET" \
+  -d "grant_type=client_credentials"
+```
+
+### Réponse
+
+```json id="n7m4yb"
+{
+  "access_token": "YOUR_ACCESS_TOKEN",
+  "expires_in": 3600
+}
+```
+
+---
+
+## Étape 3 : Faire votre première requête API
+
+Utilisez le token :
+
+```bash id="xq9s2r"
+curl https://api.votreservice.com/v1/resource \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+---
+
+## Étape 4 : Ce qui se passe en arrière-plan
+
+À chaque requête :
+
+1. votre identité est authentifiée
+2. vos droits d’accès sont vérifiés (plan, permissions)
+3. votre usage est enregistré pour le suivi et la facturation
+
+→ Voir : [Architecture de suivi d’usage](/fr/api-monetization/usage-tracking-architecture)
+→ Voir : [Facturation basée sur l’usage](/fr/api-monetization/usage-based-billing)
+
+---
+
+## Usage et limites
+
+Votre utilisation de l’API peut être limitée selon votre plan :
+
+* nombre de requêtes par minute
+* nombre de requêtes par mois
+* accès à certains endpoints
+
+En cas de dépassement :
+
+* erreurs possibles
+* ou facturation supplémentaire
+
+→ Voir : [Gestion des droits (Entitlements)](/fr/api-monetization/entitlement-management-api)
+
+---
+
+## Erreurs courantes
+
+### 401 Non autorisé
+
+* token invalide ou expiré
+
+### 403 Interdit
+
+* accès non autorisé pour votre plan
+
+### 429 Trop de requêtes
+
+* limite de taux dépassée
+
+---
+
+## Bonnes pratiques
+
+* Stockez vos identifiants de manière sécurisée.
+* Renouvelez vos tokens avant expiration.
+* Surveillez votre usage pour éviter les limites.
+* Optimisez vos requêtes pour réduire les coûts.
+
+→ Voir : [Architecture de suivi d’usage](/fr/api-monetization/usage-tracking-architecture)
+
+---
+
+## FAQ
+
+### Qu’est-ce que OAuth 2.0 ?
+
+OAuth 2.0 est un protocole standard utilisé pour sécuriser l’authentification des requêtes API.
+
+---
+
+### Pourquoi ai-je besoin d’un token d’accès ?
+
+Le token prouve votre identité et permet à l’API de contrôler et suivre votre usage.
+
+---
+
+### Chaque requête est-elle comptabilisée ?
+
+Oui. Chaque requête authentifiée est généralement suivie et peut être facturée selon votre plan.
+
+---
+
+### Que se passe-t-il si je dépasse mes limites ?
+
+Vos requêtes peuvent être bloquées ou facturées selon votre modèle tarifaire.
+
+---
+
+## Sujets liés
+
+* [Guide de monétisation API](/fr/api-monetization/api-monetization-guide)
+* [Gestion des droits (Entitlements)](/fr/api-monetization/entitlement-management-api)
+* [Architecture de suivi d’usage](/fr/api-monetization/usage-tracking-architecture)
+* [Facturation basée sur l’usage](/fr/api-monetization/usage-based-billing)
+
+---
+
+## Points clés à retenir
+
+* L’authentification est la première étape pour utiliser une API.
+* Elle contrôle l’accès et est liée à la monétisation.
+* Chaque requête peut être suivie et facturée.
+* Une documentation claire améliore l’onboarding et réduit les erreurs.
+
+---
+
+<script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Authentifier une requête API avec OAuth 2.0",
+      "step": [
+        { "@type": "HowToStep", "name": "Obtenir les identifiants API" },
+        { "@type": "HowToStep", "name": "Demander un token d’accès" },
+        { "@type": "HowToStep", "name": "Faire une requête API" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce que OAuth 2.0 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OAuth 2.0 est un protocole standard utilisé pour sécuriser l’authentification des requêtes API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Chaque requête est-elle comptabilisée ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Chaque requête authentifiée est généralement suivie et peut être facturée selon votre plan."
+          }
+        }
+      ]
+    }
+  ]
+}`} />

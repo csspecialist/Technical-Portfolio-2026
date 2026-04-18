@@ -1,181 +1,207 @@
 ---
-title: "API de gestion des droits : Guide de conception et de mise en œuvre"
-description: "Découvrez comment concevoir et mettre en œuvre un système de gestion des droits pour les API, incluant le contrôle d'accès, le gating de fonctionnalités et les permissions basées sur les plans dans les plateformes SaaS."
+title: "API de gestion des droits (Entitlements) : guide de conception et d’implémentation"
+description: "Apprenez à concevoir et implémenter un système de gestion des droits pour les API, incluant le contrôle d’accès, le feature gating et les permissions basées sur les plans dans les plateformes SaaS."
 
 type: "TechArticle"
-version: "1.0.0"
 status: "published"
-date: "2026-04-13"
 author: "Maliki Kamara"
-lang: fr
 
-category: "Monétisation d'API"
+category: "Monétisation API"
 complexity: "Intermédiaire"
-tags: ["gestion des droits", "contrôle d'accès API", "permissions SaaS", "gating de fonctionnalités", "licences logicielles", "monétisation API"]
+
+tags: ["gestion des droits", "contrôle d’accès api", "permissions saas", "feature gating", "licences logicielles", "monétisation api"]
 
 sidebar:
-  label: "API de gestion des droits"
+  label: "Gestion des droits API"
   order: 2
 ---
 
-## API de gestion des droits : Guide de conception et de mise en œuvre
+## Qu’est-ce que la gestion des droits&nbsp;?
 
-## Qu'est-ce que la gestion des droits ?
+La gestion des droits définit **ce qu’un utilisateur est autorisé à faire** dans une API ou un produit SaaS selon son plan, son abonnement ou ses permissions.
 
-La gestion des droits est le système qui définit **ce qu'un utilisateur ou un client est autorisé à accéder** dans une API ou un produit SaaS, en fonction de son abonnement, de son plan ou de ses permissions.
+Elle agit comme une **couche de décision entre l’authentification et l’exécution**.
 
-Elle agit comme la **couche de décision** entre l'authentification et l'accès réel à l'API.
+* L’authentification répond à : qui est l’utilisateur&nbsp;?
+* Les droits répondent à : que peut-il faire&nbsp;?
 
----
-
-## Pourquoi c'est important
-
-*   **Contrôle l'accès** aux fonctionnalités et aux endpoints
-*   **Applique les plans tarifaires** (gratuit, premium, entreprise)
-*   **Soutient les modèles de monétisation**
-*   **Prévient l'utilisation non autorisée**
+Pour comprendre l’authentification, consultez le [Démarrage rapide Auth API](/fr/guides/auth-api-quickstart).
 
 ---
 
-## Comment ça marche
+## Pourquoi la gestion des droits est essentielle
 
-Un système de gestion des droits se situe généralement entre l'authentification et la logique métier :
+Sans gestion des droits, il est impossible de contrôler l’accès ou de monétiser une API.
 
-1.  L'utilisateur s'authentifie (clé API ou token)
-2.  Le système récupère le plan et les droits de l'utilisateur
-3.  L'API vérifie les permissions pour l'action demandée
-4.  L'accès est accordé ou refusé
+Elle permet de :
+
+* contrôler l’accès aux endpoints et fonctionnalités
+* appliquer les plans tarifaires
+* soutenir les modèles de monétisation
+* prévenir les usages non autorisés
+
+Elle est un composant clé d’un [système de monétisation API](/fr/api-monetization/api-monetization-guide).
+
+---
+
+## Position dans l’architecture
+
+La gestion des droits intervient entre l’authentification et le suivi d’usage.
+
+Flux typique :
+
+1. L’utilisateur s’authentifie
+   → [Démarrage rapide Auth API](/fr/guides/auth-api-quickstart)
+
+2. Le système récupère ses droits
+
+3. L’API valide l’accès
+
+4. La requête est acceptée ou refusée
+
+5. Si acceptée, l’usage est enregistré
+   → [Architecture de suivi d’usage](/fr/api-monetization/usage-tracking-architecture)
 
 ---
 
 ## Implémentation étape par étape
 
-### Étape 1 : Définir les plans et les fonctionnalités
+### Étape 1 : Définir les plans
 
-Exemple :
+* Gratuit → accès limité
+* Pro → fonctionnalités avancées
+* Entreprise → accès complet
 
-*   Plan gratuit → endpoints de base
-*   Plan Pro → endpoints avancés + limites plus élevées
-*   Entreprise → accès complet
+Voir le [Guide de monétisation API](/fr/api-monetization/api-monetization-guide)
 
 ---
 
 ### Étape 2 : Modéliser les droits
 
-Chaque utilisateur devrait avoir :
+Chaque utilisateur doit avoir :
 
-*   type de plan
-*   endpoints autorisés
-*   limites d'utilisation
-*   flags de fonctionnalités
+* type de plan
+* endpoints autorisés
+* fonctionnalités activées
+* limites d’usage
 
 ---
 
-### Étape 3 : Stocker les données de droits
+### Étape 3 : Stocker les droits
 
 Options courantes :
 
-*   base de données (PostgreSQL, MongoDB)
-*   couche de cache (Redis) pour une recherche rapide
+* base de données
+* cache (Redis)
 
 ---
 
-### Étape 4 : Valider les droits dans l'API
+### Étape 4 : Vérifier les droits
 
-```json
+```http
 GET /api/v1/premium-data
 Authorization: Bearer API_KEY
 ```
 
 Vérifier :
 
-*   L'utilisateur a-t-il accès à cet endpoint ?
-*   La limite d'utilisation a-t-elle été dépassée ?
+* accès autorisé
+* fonctionnalité active
+* limite non dépassée
 
 ---
 
-### Étape 5 : Gérer les réponses de refus
-
-Retourner des erreurs claires :
+### Étape 5 : Gérer les refus
 
 ```json
 {
   "error": "access_denied",
-  "message": "Mettez à niveau votre plan pour accéder à cet endpoint."
+  "message": "Mettez à niveau votre plan pour accéder à cette ressource."
 }
 ```
 
 ---
 
-## Exemple de flux architectural
-
-1.  Requête API reçue
-2.  Le service d'authentification valide l'identité
-3.  Le service de droits récupère les permissions
-4.  La passerelle API applique les règles
-5.  La requête procède ou est bloquée
-
----
-
 ## Bonnes pratiques
 
-*   **Centraliser la logique de gestion des droits**
-*   **Mettre en cache les données de droits pour la performance**
-*   **Séparer les droits de l'authentification**
-*   **Concevoir des structures de plans flexibles**
-*   **Journaliser les vérifications de droits pour l'audit**
+* centraliser la logique
+* utiliser un cache
+* séparer authentification et autorisation
+* concevoir des plans flexibles
+* journaliser les vérifications
 
 ---
 
-## Erreurs courantes
+## Erreurs fréquentes
 
-*   Coder en dur les permissions
-*   Mélanger la logique d'authentification et d'autorisation
-*   Ne pas gérer les mises à niveau de plan dynamiquement
-*   Mauvais messages d'erreur
+* permissions codées en dur
+* confusion auth / autorisation
+* absence de mise à jour dynamique
+* erreurs peu claires
 
 ---
 
 ## FAQ
 
-### Qu'est-ce qu'un droit dans une API ?
+### Qu’est-ce qu’un droit (entitlement) dans une API&nbsp;?
 
-Un droit définit ce qu'un utilisateur est autorisé à accéder, comme des endpoints spécifiques, des fonctionnalités ou des limites d'utilisation.
-
----
-
-### En quoi la gestion des droits est-elle différente de l'authentification ?
-
-L'authentification vérifie l'identité, tandis que les droits déterminent les permissions et les droits d'accès.
+Un droit définit ce qu’un utilisateur peut faire, comme accéder à des endpoints, fonctionnalités ou limites d’usage.
 
 ---
 
-### Les droits peuvent-ils changer dynamiquement ?
+### Quelle est la différence entre authentification et droits&nbsp;?
 
-Oui. Les droits doivent être mis à jour lorsqu'un utilisateur met à niveau, rétrograde ou modifie ses plans d'abonnement.
-
----
-
-### Les petits produits SaaS ont-ils besoin de la gestion des droits ?
-
-Oui. Même les API simples bénéficient d'un contrôle d'accès structuré à mesure qu'elles évoluent.
+L’authentification vérifie l’identité, les droits définissent les permissions.
 
 ---
 
-## Sujets connexes
+### Les droits peuvent-ils changer dynamiquement&nbsp;?
 
-*   Guide de monétisation des API
-*   Architecture de facturation basée sur l'utilisation
-*   Limitation de débit API vs Quotas
-*   Démarrage rapide de l'authentification API
+Oui, lors d’un changement de plan ou d’abonnement.
 
 ---
 
-## Points clés à retenir
+### Que se passe-t-il si un utilisateur dépasse ses droits&nbsp;?
 
-*   Les droits définissent l'accès, pas l'identité
-*   Ils sont essentiels pour la monétisation et le contrôle
-*   Un système de gestion des droits bien conçu est évolutif et flexible
-*   Une séparation claire des préoccupations améliore la maintenabilité
+L’API peut bloquer la requête, retourner une erreur ou déclencher une action de facturation.
 
 ---
+
+<script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu’est-ce qu’un droit (entitlement) dans une API&nbsp;?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un droit définit ce qu’un utilisateur peut faire, comme accéder à des endpoints, fonctionnalités ou limites d’usage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre authentification et droits&nbsp;?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L’authentification vérifie l’identité, tandis que les droits définissent les permissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les droits peuvent-ils changer dynamiquement&nbsp;?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les droits doivent être mis à jour lors d’un changement de plan ou d’abonnement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si un utilisateur dépasse ses droits&nbsp;?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L’API peut bloquer la requête, retourner une erreur ou déclencher une action de facturation."
+      }
+    }
+  ]
+}`} />

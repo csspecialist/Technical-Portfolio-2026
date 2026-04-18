@@ -1,135 +1,223 @@
 ---
-title: "Auth API Quickstart"
-description: A 5-minute guide to authenticating your first API call using OAuth 2.0.
+title: "Auth API Quickstart: Authenticate Your First Request in 5 Minutes"
+description: "Learn how to authenticate your first API request using OAuth 2.0. This quickstart helps developers get started fast while understanding usage, limits, and API access."
+
+type: "HowTo"
+version: "1.0.0"
+status: "published"
+date: "2026-04-13"
+author: "Maliki K."
+
+category: "API Onboarding"
+complexity: "Beginner"
+
+tags: ["api authentication", "oauth 2.0", "api onboarding", "developer experience", "api monetization"]
+
 sidebar:
-  label: "API Quickstart"
-  order: 2
-# New AI-Specific Metadata
-category: Developer Experience
-complexity: Intermediate
-tags: [API, Authentication, Security, Quickstart]
+  label: "Auth API Quickstart"
+  order: 1
 ---
 
-## SecureAuth — Quickstart Guide
+## What you will learn
 
-Get up and running with MFA enrollment and verification in minutes.
+In this guide, you will:
 
-## Prerequisites
+* Authenticate your first API request using OAuth 2.0
+* Understand how API access is controlled
+* See how authentication connects to usage tracking and billing
 
-- A valid SecureAuth account
-- Your Bearer Token (issued from the developer dashboard)
-- A TOTP-compatible authenticator app (e.g., Google Authenticator,
-  Authy)
-
-## Authentication
-
-All requests require an `Authorization` header containing your Bearer
-Token.
-
-```http
-Authorization: Bearer <YOUR_TOKEN>
-```
-
-## Endpoints
-
-### POST /v1/mfa/enroll
-
-Enrolls a user in TOTP-based multi-factor authentication.
-
-#### Enrollment Request
-
-```http
-POST /v1/mfa/enroll HTTP/1.1
-Host: api.secureauth.io
-Authorization: Bearer <YOUR_TOKEN>
-Content-Type: application/json
-
-{
-  "user_id": "usr_01HXYZ",
-  "method": "totp"
-}
-```
-
-#### Enrollment Response — 200 OK
-
-```json
-{
-  "enrollment_id": "enr_09ABCD",
-  "totp_uri": "otpauth://totp/SecureAuth:usr_01HXYZ?secret=SECRET32",
-  "qr_code_url": "https://api.secureauth.io/qr/enr_09ABCD.png"
-}
-```
-
-#### Enrollment Response Fields
-
-| Field           | Type   | Description                           |
-|-----------------|--------|---------------------------------------|
-| `enrollment_id` | string | Unique identifier for this enrollment |
-| `totp_uri`      | string | OTP Auth URI for authenticator apps   |
-| `qr_code_url`   | string | URL to the scannable QR code image    |
+→ See: [API Monetization Guide](/en/api-monetization/api-monetization-guide)
 
 ---
 
-### POST /v1/mfa/verify
+## Before you start
 
-Verifies a TOTP code submitted by the user.
+Make sure you have:
 
-#### Verification Request
-
-```http
-POST /v1/mfa/verify HTTP/1.1
-Host: api.secureauth.io
-Authorization: Bearer <YOUR_TOKEN>
-Content-Type: application/json
-
-{
-  "enrollment_id": "enr_09ABCD",
-  "totp_code": "123456"
-}
-```
-
-#### Verification Response — 200 OK
-
-```json
-{
-  "verified": true,
-  "session_token": "sess_XYZ789..."
-}
-```
-
-#### Response — 401 Unauthorized
-
-```json
-{
-  "verified": false,
-  "error": "invalid_totp_code"
-}
-```
-
-#### Verification Response Fields
-
-| Field           | Type    | Description                           |
-|-----------------|---------|---------------------------------------|
-| `enrollment_id` | string  | Enrollment ID returned at enroll step |
-| `totp_code`     | string  | 6-digit code from your authenticator  |
-| `verified`      | boolean | `true` if verification succeeded      |
-| `session_token` | string  | Session token issued on success       |
+* an API key or client credentials
+* access to the API dashboard
+* a tool like curl or Postman
 
 ---
 
-## Error Codes
+## Step 1: Get your API credentials
 
-| Code                   | Status | Description                        |
-|------------------------|--------|------------------------------------|
-| `invalid_token`        | 401    | Bearer Token is missing or invalid |
-| `user_not_found`       | 404    | The specified `user_id` not found  |
-| `invalid_totp_code`    | 401    | TOTP code is incorrect or expired  |
-| `enrollment_not_found` | 404    | No enrollment matches that ID      |
+Go to your dashboard and create:
+
+* Client ID
+* Client Secret
+
+These credentials identify your application and control access.
+
+Access is often tied to a **plan or subscription level**.
+
+→ See: [Entitlement Management API](/en/api-monetization/entitlement-management-api)
 
 ---
 
-## Next Steps
+## Step 2: Request an access token
 
-- Review rate limits in the full [API Reference](../api-reference.md).
-- Enable backup codes via `POST /v1/mfa/backup`.
-- Contact support at support@secureauth.io.
+Use OAuth 2.0 to get a token:
+
+```bash id="5gkqtn"
+curl -X POST https://api.yourservice.com/oauth/token \
+  -d "client_id=YOUR_CLIENT_ID" \
+  -d "client_secret=YOUR_CLIENT_SECRET" \
+  -d "grant_type=client_credentials"
+```
+
+### Response
+
+```json id="jjh4l1"
+{
+  "access_token": "YOUR_ACCESS_TOKEN",
+  "expires_in": 3600
+}
+```
+
+---
+
+## Step 3: Make your first API request
+
+Use the token:
+
+```bash id="r6nyzq"
+curl https://api.yourservice.com/v1/resource \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+---
+
+## Step 4: Understand what happens behind the scenes
+
+Each request:
+
+1. Authenticates your identity
+2. Checks your access rights (plan, permissions)
+3. Records usage for tracking and billing
+
+→ See: [Usage Tracking Architecture](/en/api-monetization/usage-tracking-architecture)
+→ See: [Usage-Based Billing Architecture](/en/api-monetization/usage-based-billing)
+
+---
+
+## Usage and limits
+
+Your API usage may be limited based on your plan:
+
+* number of requests per minute
+* number of requests per month
+* access to specific endpoints
+
+Exceeding limits may result in errors or additional charges.
+
+→ See: [Entitlement Management API](/en/api-monetization/entitlement-management-api)
+
+---
+
+## Common errors
+
+### 401 Unauthorized
+
+* Invalid or expired token
+
+### 403 Forbidden
+
+* Access not allowed for your plan
+
+### 429 Too Many Requests
+
+* Rate limit exceeded
+
+---
+
+## Best practices
+
+* Store credentials securely
+* Refresh tokens before expiration
+* Monitor usage to avoid limits
+* Optimize requests to reduce costs
+
+→ See: [Usage Tracking Architecture](/en/api-monetization/usage-tracking-architecture)
+
+---
+
+## FAQ
+
+### What is OAuth 2.0?
+
+OAuth 2.0 is a standard protocol used to securely authenticate API requests.
+
+---
+
+### Why do I need an access token?
+
+The token proves your identity and allows the API to track and control your usage.
+
+---
+
+### Does every request count toward usage?
+
+Yes. Each authenticated request is typically tracked and may be billed depending on your plan.
+
+---
+
+### What happens if I exceed my limits?
+
+Requests may be blocked or billed depending on your pricing model.
+
+---
+
+## Related topics
+
+* [API Monetization Guide](/en/api-monetization/api-monetization-guide)
+* [Entitlement Management API](/en/api-monetization/entitlement-management-api)
+* [Usage Tracking Architecture](/en/api-monetization/usage-tracking-architecture)
+* [Usage-Based Billing Architecture](/en/api-monetization/usage-based-billing)
+
+---
+
+## Key takeaways
+
+* Authentication is the first step in using an API
+* It controls access and connects to monetization systems
+* Every request can be tracked and billed
+* Clear documentation improves onboarding and reduces errors
+
+---
+
+<script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Authenticate your first API request using OAuth 2.0",
+      "step": [
+        { "@type": "HowToStep", "name": "Get API credentials" },
+        { "@type": "HowToStep", "name": "Request an access token" },
+        { "@type": "HowToStep", "name": "Make an API request" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is OAuth 2.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OAuth 2.0 is a standard protocol used to securely authenticate API requests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every request count toward usage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each authenticated request is typically tracked and may be billed depending on your plan."
+          }
+        }
+      ]
+    }
+  ]
+}`} />
