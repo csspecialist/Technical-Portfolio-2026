@@ -55,9 +55,9 @@ L’accès est souvent lié à un **plan ou abonnement**.
 
 ---
 
-## Étape 2 : Demander un token d’accès
+## Étape 2 : Demander un jeton d’accès
 
-Utilisez OAuth 2.0 pour obtenir un token :
+Utilisez OAuth 2.0 pour obtenir un jeton :
 
 ```bash id="f3l2xv"
 curl -X POST https://api.votreservice.com/oauth/token \
@@ -79,7 +79,7 @@ curl -X POST https://api.votreservice.com/oauth/token \
 
 ## Étape 3 : Faire votre première requête API
 
-Utilisez le token :
+Utilisez le jeton :
 
 ```bash id="xq9s2r"
 curl https://api.votreservice.com/v1/resource \
@@ -122,7 +122,7 @@ En cas de dépassement :
 
 ### 401 Non autorisé
 
-* token invalide ou expiré
+* jeton d'accès invalide ou expiré
 
 ### 403 Interdit
 
@@ -137,7 +137,7 @@ En cas de dépassement :
 ## Bonnes pratiques
 
 * Stockez vos identifiants de manière sécurisée.
-* Renouvelez vos tokens avant expiration.
+* Renouvelez vos jetons d'accès avant expiration.
 * Surveillez votre usage pour éviter les limites.
 * Optimisez vos requêtes pour réduire les coûts.
 
@@ -153,9 +153,9 @@ OAuth 2.0 est un protocole standard utilisé pour sécuriser l’authentificatio
 
 ---
 
-### Pourquoi ai-je besoin d’un token d’accès ?
+### Pourquoi ai-je besoin d’un jeton d’accès ?
 
-Le token prouve votre identité et permet à l’API de contrôler et suivre votre usage.
+Le jeton d'accès prouve votre identité et permet à l’API de contrôler et suivre votre usage.
 
 ---
 
@@ -197,7 +197,7 @@ Vos requêtes peuvent être bloquées ou facturées selon votre modèle tarifair
       "name": "Authentifier une requête API avec OAuth 2.0",
       "step": [
         { "@type": "HowToStep", "name": "Obtenir les identifiants API" },
-        { "@type": "HowToStep", "name": "Demander un token d’accès" },
+        { "@type": "HowToStep", "name": "Demander un jeton d’accès" },
         { "@type": "HowToStep", "name": "Faire une requête API" }
       ]
     },
